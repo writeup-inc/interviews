@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://writeup-inc.github.io/interviews/elliot-nishimura/">
+<meta property="og:url" content="https://writeup-inc.github.io/interviews/elliot-nishimura/">
+<meta property="og:title" content="ログを溜め始めた時点で、AI化はもう始まっている">
+<meta property="og:description" content="Elliot担当の西村果林に聞いた、提案の壁と、見方が変わった瞬間。">
+<meta property="og:type" content="article">
+<title>ログを溜め始めた時点で、AI化はもう始まっている ｜ SaaS Media</title>
+<meta name="description" content="Elliotを担当する西村果林に聞いた、提案の壁と、見方が変わった瞬間。">
+<style>
+/* ── lp-base.css（初期CSS） ───────────────────────────── */
+h1, h2, h3, h4, h5,
+.lead, .catch, .hero__title, [data-keep-phrase] {
+  word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere;
+}
+@supports not (word-break: auto-phrase) {
+  h1, h2, h3, h4, h5, .lead, .catch, .hero__title, [data-keep-phrase] { word-break: normal; }
+}
+.nobr { white-space: nowrap; }
+:root { --fs-min: 12px; --fs-body: 16px; }
+body { font-size: var(--fs-body); line-height: 1.8; }
+small, .note, figcaption { font-size: var(--fs-min); line-height: 1.7; }
+h1, .hero__title { font-size: clamp(1.55rem, 5.2vw, 3.25rem); line-height: 1.35; }
+h2 { font-size: clamp(1.3rem, 3.6vw, 2.1rem); line-height: 1.45; }
+:root { --fixed-cta-h: 0px; }
+body { padding-bottom: calc(var(--fixed-cta-h) + env(safe-area-inset-bottom, 0px)); }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+main > *, section > *, .grid > *, .flex > * { min-width: 0; }
+pre, table, .scroll-x { overflow-x: auto; max-width: 100%; }
+
+/* ── SaaS Media のトークンを継承 ───────────────────────── */
+:root{
+  --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:760px;
+  --serif: Georgia, "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; color:var(--ink); background:#fff;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; }
+:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; }
+.shell{ width:min(calc(100% - 40px), var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 40px), var(--read)); margin-inline:auto; }
+
+
+.site-header{ border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(12px); position:sticky; top:0; z-index:20; }
+.site-header .shell{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 0; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-size:15px; font-weight:800; letter-spacing:-.03em; white-space:nowrap; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px; display:grid; place-items:center; font:800 13px/1 Georgia, serif; }
+.back{ color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+.back:hover{ color:var(--orange-dark); }
+
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 18px; display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; }
+.eyebrow::before{ content:""; display:block; height:2px; width:24px; background:var(--orange); }
+
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:56px 0 46px; }
+.hero h1{ letter-spacing:-.045em; margin:0 0 26px; }
+.hero h1 em{ color:var(--orange-dark); font-family:var(--serif); font-style:normal; font-weight:500; }
+.hero-lead{ max-width:38em; color:#383838; margin:0 0 30px; font-size:16px; font-weight:550; line-height:1.95; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px; display:flex; gap:26px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:8px; }
+
+main{ padding:38px 0 0; }
+.chapter{ margin:0 0 54px; }
+.chapter-no{ font:500 13px/1 var(--serif); color:var(--orange-dark); letter-spacing:.18em; display:block; margin-bottom:12px; }
+.chapter h2{ letter-spacing:-.035em; margin:0 0 30px; padding-bottom:18px; border-bottom:2px solid var(--ink); }
+
+.qa{ margin:0 0 26px; }
+.q{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; margin:0 0 16px; }
+.q-mark{ font:500 15px/1.5 var(--serif); color:var(--orange-dark); }
+.q p{ margin:0; font-size:15px; font-weight:700; color:#333; line-height:1.85; }
+.a{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; }
+.a-name{ font-size:12px; font-weight:800; color:var(--ink); border-left:3px solid var(--orange); padding-left:9px; white-space:nowrap; margin-top:6px; }
+.a p{ margin:0 0 15px; line-height:2.0; }
+.a p:last-child{ margin-bottom:0; }
+.note-inline{ font-size:12px; line-height:1.75; color:var(--sub); background:var(--paper); border-left:3px solid var(--line); padding:12px 14px; margin:0 0 15px; }
+
+.pull{ margin:38px 0; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pull p{ margin:0; font-family:var(--serif); font-size:clamp(19px,2.6vw,25px); line-height:1.7; letter-spacing:-.01em; }
+.chapter > .pull:last-child{ margin-bottom:0; }
+
+figure{ margin:54px 0; }
+figure img{ width:100%; display:block; border:1px solid var(--line); aspect-ratio:16/9; object-fit:cover; background:var(--paper); }
+figcaption{ color:var(--sub); margin-top:9px; }
+
+/* 図解 */
+.dia{ margin:34px 0 0; }
+.dia-title{ font-size:13px; font-weight:800; letter-spacing:.02em; margin:0 0 14px; padding-left:11px; border-left:3px solid var(--orange); }
+.dia-note{ color:var(--sub); font-size:12px; line-height:1.7; margin:12px 0 0; }
+.compare{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.compare > div{ border:1px solid var(--line); padding:17px 16px; background:#fff; }
+.compare .side-a{ background:var(--paper); }
+.compare h4{ margin:0 0 11px; font-size:13px; letter-spacing:.02em; }
+.compare .side-b h4{ color:var(--orange-dark); }
+.compare p{ margin:0 0 11px; font-size:14px; line-height:1.8; }
+.compare .verdict{ margin:0; padding-top:11px; border-top:1px solid var(--line); font-size:14px; font-weight:800; }
+.flow{ display:flex; align-items:stretch; gap:9px; flex-wrap:wrap; }
+.flow .step{ flex:1 1 128px; border:1px solid var(--line); padding:14px 13px; font-size:13px; font-weight:700; line-height:1.6; background:#fff; }
+.flow .step.last{ border-color:var(--ink); background:var(--ink); color:#fff; }
+.flow .step b{ display:block; font:500 12px/1 var(--serif); color:var(--orange-dark); margin-bottom:7px; letter-spacing:.1em; }
+.flow .step.last b{ color:#ffb489; }
+.flow .arrow{ align-self:center; flex:0 0 auto; color:var(--orange); }
+
+.voices{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:46px 0; margin:0 0 54px; }
+.voices h3{ margin:0 0 20px; font-size:15px; }
+.voices h3 + ul{ margin-bottom:0; }
+.voices h3.second{ margin-top:34px; }
+.voices ul{ margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+.voices li{ padding:15px 0; border-bottom:1px solid var(--line); line-height:1.85; font-size:15px; }
+.voices li b{ display:block; font-size:12px; letter-spacing:.06em; color:var(--orange-dark); margin-bottom:5px; font-weight:800; }
+
+.article-end{ border-top:1px solid var(--line); padding:24px 0; }
+.article-end a{ font-size:14px; font-weight:800; text-decoration:none; color:var(--orange-dark); }
+.article-end a:hover{ text-decoration:underline; }
+
+.colophon{ border-top:1px solid var(--line); padding:24px 0 60px; color:var(--sub); }
+.colophon p{ margin:0 0 8px; }
+.colophon b{ color:var(--ink); }
+
+@media (max-width:640px){
+  .hero{ padding:40px 0 34px; }
+  .q{ display:block; }
+  .q .q-mark{ margin-right:8px; }
+  .q p{ display:inline; }
+  .a{ grid-template-columns:1fr; gap:7px; }
+  .a-name{ border-left:0; border-top:3px solid var(--orange); padding:7px 0 0; margin-top:0; }
+  .compare{ grid-template-columns:1fr; }
+  .flow{ display:block; }
+  .flow .step{ width:100%; }
+  .flow .arrow{ display:block; width:15px; height:15px; margin:9px auto; transform:rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="https://writeup-inc.github.io/saas/media/"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="https://writeup-inc.github.io/saas/media/">← カタログへ戻る</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="read">
+    <p class="eyebrow">INTERVIEW ／ Elliot</p>
+    <h1>ログを溜め始めた時点で、<em>AI化</em>は<span class="nobr">もう始まっている</span></h1>
+    <p class="hero-lead">Elliotは、社内のログを集めて、小人のキャラクターが毎朝その要点を届けてくれるサービスです。担当している西村果林に、提案の手前にある壁と、見方が変わった瞬間を聞きました。</p>
+    <div class="hero-meta">
+      <span><b>話す人</b>西村 果林</span>
+      <span><b>プロダクト</b>Elliot</span>
+      <span><b>取材</b>2026年9月16日</span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <div class="read">
+  <article class="chapter">
+    <span class="chapter-no">01</span>
+    <h2>「使ってもらう」の手前に、<span class="nobr">壁がある</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>Elliotを提案し始めた時、最初に感じた難しさは何でしたか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>やっぱり「自分からログインして使ってもらう」というハードルがあることです。今でも感じていますが、どうしても、もともとAIを使いたい、業務を改善したいという意欲がある人ほど使うサービスになりやすいのかなと思っています。</p>
+        <p>一方で、Elliotは単なるログ管理ツールではなく、「小人のキャラクターが毎朝情報を届けてくれる」という形なので、朝メールが届いたときに、他のAIツールよりも見てもらいやすかったり、楽しみながら見てもらえたりする部分はあると思っています。</p>
+        <p>あとは、「そもそも、なぜログを残す必要があるのか」「ログを溜めることで何ができるのか」という重要性が、まだまだ伝わりきっていないことも難しさの一つだと感じています。</p>
+      </div></div>
+    </div>
+
+    <div class="pull"><p>「そもそも、なぜログを残す必要があるのか」が、まだ伝わりきっていない。</p></div>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>「このままの伝え方では届かない」と思った出来事はありますか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>実際に運用していく中で、「AI社員同士が喋れる」という活用方法について、「面白そうだけど、どう活用するのかイメージが浮かばない」という声をいただいたことがあります。</p>
+        <p>また、そもそも社内でログを集約できていない企業も多く、Elliotを導入するだけでは解決できないケースもあります。</p>
+        <p>だからこそ、Elliot単体で考えるのではなく、使うことで自然にログが溜まっていくSaaSと組み合わせたり、AI導入・業務自動化を支援するサービスと連携したりすることで、「ログを集めるところからElliotにつなげる」という提案もできるのではないかと考えるようになりました。</p>
+        <p class="note-inline">※ ここで西村が挙げた「スーパーマネージャーとの組み合わせ」「AIバードとの連携」は、今後の提案の可能性として述べたものです。提供中の連携機能ではありません。</p>
+      </div></div>
+    </div>
+  </article>
+
+  <figure>
+    <img src="./assets/hero-meeting.jpg" width="1536" height="864" loading="lazy" alt="打ち合わせの机に資料とノートパソコンが並ぶイメージ写真">
+    <figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption>
+  </figure>
+
+  <article class="chapter">
+    <span class="chapter-no">02</span>
+    <h2>現場の便利さより、<span class="nobr">経営者が見ていたもの</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>そこから得たヒント、見方が変わった瞬間は何でしたか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>これまでは、どちらかというと現場目線で、「今日商談するお客さまが1か月前にどんな話をしていたのかを確認する」といった、ログを業務の中で活用するイメージを持っていました。</p>
+        <p>でも、お客さまのお話を聞いていると、経営者目線では、社内に溜まっているログそのものが、もっと大きな価値を持つんだと感じるようになりました。</p>
+        <p>また、ログは「ただ溜めているだけ」では意味がなくて、そこからどう活用するかが重要です。その活用までElliotによって進められるのであれば、Elliotを導入してログを溜め始めること自体が、AI化に向けた大きな一歩になるんじゃないかと思うようになりました。</p>
+      </div></div>
+    </div>
+
+    <div class="dia">
+      <p class="dia-title">同じログを、二つの目で見る</p>
+      <div class="compare">
+        <div class="side-a">
+          <h4>現場目線</h4>
+          <p>今日商談するお客さまが、1か月前にどんな話をしていたかを確認する。</p>
+          <p class="verdict">ログ＝業務の道具</p>
+        </div>
+        <div class="side-b">
+          <h4>経営者目線</h4>
+          <p>社内に溜まっているログそのものが、価値を持つ。</p>
+          <p class="verdict">ログ＝会社の資産</p>
+        </div>
+      </div>
+      <p class="dia-note">見る位置が変わると、同じログの値打ちが変わる。西村の発言をもとに構成しています。</p>
+    </div>
+  </article>
+  </div>
+
+  <section class="voices">
+    <div class="read">
+      <h3>現場で聞こえてきた声</h3>
+      <ul>
+        <li><b>キャラクターに笑う</b>届ける情報の独自度合いは設定できるのですが、やっぱり「Elliotというキャラクターが情報を届けてくれる」というところで、笑ってくださる方は結構多いです。</li>
+        <li><b>人材系のお客さま</b>スタッフが保有している人材の方と面談するときに、「良い面談と悪い面談を比較したい」というお話をいただいたことがあります。</li>
+      </ul>
+      <h3 class="second">その声が向かった先</h3>
+      <ul>
+        <li><b>Elliot総研</b>ログを分析してレポートを出す機能です。こうした分析レポートは、経営者の方からも評判が良いと感じています。</li>
+        <li><b>MVP</b>毎朝のメールで、ログをもとに活躍している社員をMVPとして表彰する機能です。「そこが導入の決め手になった」という声もありました。</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="read">
+  <article class="chapter">
+    <span class="chapter-no">03</span>
+    <h2>使うほど、ノウハウが<span class="nobr">勝手に溜まっていく</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>以降、提案資料やヒアリング、フォローで変えたことはありますか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>以前は、「Elliotを使う意味」や「ログを溜める意味」が、なかなか伝わりきらないことがありました。</p>
+        <p>そこで相談する中で改めて気づいたのが、Elliotは使えば使うほどログが溜まり、そのログからElliotがノウハウを抽出して、勝手に蓄積していくというところです。つまり、使い続けることで、社内の新しいナレッジが自然と蓄積されていく。</p>
+        <p>今はそこをElliotの推しポイントとして、より伝えるようにしています。単に「ログを管理・分析するツール」ではなく、「使っているうちに、会社のノウハウがどんどん蓄積されていく」という伝え方を意識しています。</p>
+      </div></div>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>今なら、当時の自分にどんな助言をしますか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>「Elliotで何ができるか」だけを説明するのではなく、「なぜ今、ログを溜めておく必要があるのか」まで伝えたほうがいい、と伝えたいです。</p>
+        <p>Elliotを使えば使うほど、会社のログが溜まり、そこからノウハウやナレッジも蓄積されていく。その先にAI化があると考えると、Elliotは単なる分析ツールではなく、将来のAI活用に向けた土台をつくるサービスなんだと思います。</p>
+      </div></div>
+    </div>
+
+    <div class="dia">
+      <p class="dia-title">使うほど、勝手に積み上がる</p>
+      <div class="flow">
+        <div class="step"><b>01</b>毎日、使う</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step"><b>02</b>ログが溜まる</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step"><b>03</b>ノウハウを抽出</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step last"><b>1年後</b>AI化の土台</div>
+      </div>
+      <p class="dia-note">手順ではなく、時間の経過です。抽出はElliotが行います。西村の発言をもとに構成しています。</p>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <span class="chapter-no">04</span>
+    <h2>1年後に、「溜めておいて<span class="nobr">よかった」と</span>言われたい</h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>このプロダクトを通じて、お客さまに最終的にどんな変化を残したいですか。</p></div>
+      <div class="a"><span class="a-name">西村</span><div>
+        <p>1年後くらいに、「あのときElliotを入れて、ログを溜めておいてよかった」と思ってもらえる状態をつくりたいです。</p>
+        <p>今のうちからログを溜めておけば、1年間の業務データが蓄積されて、その会社の業務の分析やノウハウの蓄積につながります。そして、その蓄積があるからこそ、その先のAI化にもつなげられる。</p>
+      </div></div>
+    </div>
+
+    <div class="pull"><p>「Elliotを入れたことで、1年後のAI活用の土台ができていた」と感じてもらえるような変化を、お客さまに残したいです。</p></div>
+  </article>
+
+  <nav class="article-end">
+    <a href="https://writeup-inc.github.io/saas/media/">SaaS Media の記事一覧へ</a>
+  </nav>
+
+  <div class="colophon">
+    <p><b>この記事について</b></p>
+    <p>本人へのインタビュー回答（2026年9月16日・Slack）をもとに、読みやすさのため編集・再構成しています。事実の追加はしていません。</p>
+    <p>本文中の「スーパーマネージャーとの組み合わせ」「AIバードとの連携」は、西村本人が今後の提案の可能性として述べたもので、提供中の機能ではありません。</p>
+    <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+  </div>
+  </div>
+
+</main>
+</body>
+</html>
