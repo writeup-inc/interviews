@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://writeup-inc.github.io/interviews/socialmaster-kanno/">
+<meta property="og:url" content="https://writeup-inc.github.io/interviews/socialmaster-kanno/">
+<meta property="og:title" content="返事が、返ってきた">
+<meta property="og:description" content="ソーシャルマスター担当・菅野秀平。発信ではなく、会話だった。">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://writeup-inc.github.io/saas/media/assets/hero-team.jpg">
+<title>返事が、返ってきた ｜ SaaS Media</title>
+<meta name="description" content="ソーシャルマスター担当・菅野秀平。発信ではなく、会話だった。">
+<style>
+h1,h2,h3,.lead,[data-keep-phrase]{ word-break:auto-phrase; line-break:strict; overflow-wrap:anywhere; }
+@supports not (word-break:auto-phrase){ h1,h2,h3,.lead,[data-keep-phrase]{ word-break:normal; } }
+*,*::before,*::after{ box-sizing:border-box; }
+:root{
+  --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:680px;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho",Georgia,serif;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+}
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:#fff; font-family:var(--sans);
+  font-size:16px; line-height:1.8; -webkit-font-smoothing:antialiased; }
+a{ color:inherit; }
+h1,h2,h3,p{ margin-top:0; }
+.shell{ width:min(calc(100% - 44px),var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 44px),var(--read)); margin-inline:auto; }
+.site-header{ position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94); backdrop-filter:blur(12px); }
+.nav-inner{ height:56px; display:flex; align-items:center; gap:20px; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  font-size:15px; font-weight:800; letter-spacing:-.03em; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px;
+  display:grid; place-items:center; font:800 13px/1 Georgia,serif; }
+.back{ margin-left:auto; color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 22px;
+  display:flex; align-items:center; gap:10px; font-size:10px; font-weight:800; }
+.eyebrow::before{ content:""; height:2px; width:24px; background:var(--orange); }
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:76px 0 52px; }
+.hero h1{ font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(1.85rem,6vw,3.4rem); line-height:1.4; margin:0 0 24px; }
+.hero .sub{ font-family:var(--serif); font-size:clamp(15px,1.9vw,19px);
+  line-height:1.9; margin:0 0 30px; max-width:28em; color:#333; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px;
+  display:flex; gap:22px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:7px; }
+main{ padding:66px 0 0; font-family:var(--serif); }
+main p{ margin:0 0 26px; line-height:2.15; font-size:17px; letter-spacing:.01em; }
+main strong{ font-weight:700; background:linear-gradient(transparent 62%, #fde4cf 62%); }
+section{ margin-bottom:62px; }
+h2{ font-family:var(--sans); font-size:clamp(1.15rem,3vw,1.6rem); line-height:1.55;
+  letter-spacing:-.02em; font-weight:800; margin:0 0 26px; padding-top:22px;
+  border-top:2px solid var(--ink); }
+h2 .step{ display:block; font:800 10px/1 var(--sans); letter-spacing:.16em;
+  color:var(--orange-dark); margin-bottom:12px; }
+blockquote{ margin:30px 0; padding:0 0 0 20px; border-left:3px solid var(--orange); }
+blockquote p{ font-size:clamp(17px,2.2vw,20px); line-height:1.95; margin:0 0 8px; }
+blockquote cite{ display:block; font-family:var(--sans); color:var(--sub);
+  font-size:11px; font-weight:700; font-style:normal; letter-spacing:.04em; }
+.beat{ font-size:clamp(18px,2.4vw,22px) !important; line-height:1.7 !important;
+  font-weight:600; margin:34px 0 !important; }
+.g{ font-family:var(--sans); font-size:10px; font-weight:800; letter-spacing:.06em;
+  padding:2px 6px; border-radius:2px; white-space:nowrap; vertical-align:.14em; }
+.g-guess{ background:#fff1e3; color:var(--orange-dark); border:1px solid #f7c79c; }
+.g-check{ background:#eef1f7; color:#3d4f7a; border:1px solid #c3cde3; }
+.closing{ background:var(--paper); border-top:1px solid var(--line);
+  padding:56px 0 62px; margin-top:16px; font-family:var(--serif); }
+.closing h2{ border-top:0; padding-top:0; }
+.closing p{ margin:0 0 24px; line-height:2.15; font-size:17px; }
+.closing .last{ font-size:clamp(18px,2.4vw,22px); font-weight:600; line-height:1.75; }
+.cta{ display:inline-block; font-family:var(--sans); background:var(--ink); color:#fff;
+  text-decoration:none; padding:15px 30px; font-size:14px; font-weight:800; }
+.cta:hover{ background:var(--orange-dark); }
+.legend{ font-family:var(--sans); background:#fff; border:1px solid var(--line);
+  padding:20px 22px; margin:0 0 42px; }
+.legend h3{ font-size:11px; letter-spacing:.14em; font-weight:800; color:var(--sub); margin:0 0 14px; }
+.legend ul{ margin:0; padding:0; }
+.legend li{ font-size:13px; line-height:1.9; margin-bottom:7px; list-style:none; }
+footer{ border-top:1px solid var(--line); padding:32px 0 60px; font-family:var(--sans); }
+footer p{ color:var(--sub); font-size:12px; line-height:1.85; margin:0 0 8px; }
+@media (max-width:600px){
+  .hero{ padding:54px 0 40px; }
+  main{ padding-top:48px; }
+  main p{ font-size:16px; line-height:2.05; }
+  section{ margin-bottom:50px; }
+}
+
+.hero-band{ margin:0; border-bottom:1px solid var(--line); background:var(--paper); }
+.hero-band img{ display:block; width:100%; height:clamp(220px,34vw,430px); object-fit:cover; }
+.hero-band figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.7;
+  width:min(calc(100% - 44px),var(--max)); margin:11px auto 13px; }
+figure{ margin:36px 0; }
+figure img{ display:block; width:100%; }
+figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.75;
+  margin-top:10px; padding-left:12px; border-left:2px solid var(--line); }
+figcaption b{ color:#444; margin-right:7px; letter-spacing:.1em; font-size:10px; }
+.scene img{ height:clamp(200px,31vw,350px); object-fit:cover; }
+.portrait{ float:right; width:clamp(124px,27%,196px); margin:2px 0 18px 26px; }
+.portrait img{ border:1px solid var(--line); }
+.portrait figcaption{ padding-left:0; border-left:0; margin-top:8px; font-size:10px; }
+section::after{ content:""; display:block; clear:both; }
+@media (max-width:600px){
+  .portrait{ float:none; width:100%; margin:28px 0; }
+  .portrait figcaption{ padding-left:12px; border-left:2px solid var(--line); }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="shell nav-inner">
+    <a class="brand" href="/saas/media/"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="/saas/media/">← カタログへ戻る</a>
+  </div>
+</header>
+<div class="hero">
+  <div class="read">
+    <p class="eyebrow">INTERVIEW ／ 菅野 秀平</p>
+    <h1>返事が、<br>返ってきた</h1>
+    <p class="sub">自動で投稿できること自体には、もう価値はなかった。そこから先に、答えがあった。</p>
+    <p class="hero-meta"><span><b>話す人</b>菅野 秀平</span><span><b>プロダクト</b>ソーシャルマスター</span><span><b>取材</b>2026年9月17日</span><span><b>読了</b>約5分</span></p>
+  </div>
+</div>
+<figure class="hero-band"><img src="/saas/media/assets/hero-team.jpg" alt="">
+<figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption></figure>
+<main class="read">
+
+  <section>
+    <h2><span class="step">起</span>朝8時、彼は現場を号外にして配る</h2>
+    <p>2026年9月17日、午前8時9分。第二営業部のチャンネルに、菅野秀平から配信が流れた。</p>
+    <blockquote>
+      <p>【配信】9/16 商談号外｜9/15の現場から2本。対話4件中、案内に使いやすい2本を号外化しました。</p>
+      <cite>社内チャンネルより</cite>
+    </blockquote>
+    <p>昨日の商談で起きたことを、翌朝には使える形にして配る。</p>
+    <p>ふだんのメッセージは、とにかく勢いがいい。あざっす。俺だ。せんきゅうべりまち。絵文字と感嘆符が多い。</p>
+    <p class="beat">試して、書いて、配る。この人の周りでは、いつも何かが動いている。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>情報はあった。体験が、なかった</h2>
+    <p>ソーシャルマスターを提案し始めたとき、最初にぶつかった壁は知識ではなかった。</p>
+    <blockquote>
+      <p>最初は、どうやったらフォロワーが増えるのかといったノウハウがなかったし、どういう発信をすべきかというところも分からなかった。情報自体はあったものの、自分の体験として持っていなかったので、そこがちょっと難しかったな、と。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>調べれば書いてある。けれど、自分がやったことではない。<strong>借り物の言葉で売ろうとしていた。</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>「それ、今あるサービスでもできますよね」</h2>
+    <p>もうひとつ、もっと手前の問題があった。</p>
+    <blockquote>
+      <p>投稿内容を作って自動で発信する、そこまでだったら、ぶっちゃけ今の既存のサービスの機能でもありました。なので、それ以上に何かAI的な要素が必要だったなと思いました。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>自動投稿は、もう珍しくない。珍しくないものを、珍しそうに説明していた。 それでは差にならない。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>Instagramから、アポが入った</h2>
+    <p>見方が変わったのは、実際に起きた一件だった。</p>
+    <blockquote>
+      <p>Instagramから実際にアポが入ったという事例。相手はAIだと分かったようですが、投稿した内容に対してリアクションがあり、そこに対してもAIが対応してラリーが続くという部分で、実際に成果につながったところがポイントでした。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>相手は、AIだと気づいていた。それでも、会話は続いた。そして商談になった。</p>
+    <p class="beat"><strong>単なる発信ではなく、コミュニケーションをAI化できた。</strong>そこがすごい強みなんだな、と思いました——彼はそう言った。</p>
+    <p>投稿を作る機能ではなく、返ってきたものに返す機能。価値の在り処が、後ろにずれた。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>それ以降、訴求する場所を変えた</h2>
+    <p>気づいた翌日から、話す順番が変わる。</p>
+    <blockquote>
+      <p>それ以降、自分が発信した内容に対してAIがどれくらいコミュニケーションを取るかや、そのコミュニケーションに対してもプロンプト設定ができるといった点を訴求するようにしました。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>どう投稿するかではなく、どう返すか。返し方まで自分で決められること。そこを前に出した。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">結</span>やっぱり、自分のアカウントでやっていると強い</h2>
+    <p>そして彼は、自分でやることにこだわる。</p>
+    <blockquote>
+      <p>やはりそれが自分のアカウントでできていると強いと思うので、PDCAというか事例をガンガン作っていくのは非常に重要だと感じています。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>社内でも、彼はこう書いている。こう言ったらどうなのかなって色々試して、それを蓄積だね、と。</p>
+    <p><strong>借り物の言葉で始まった仕事を、自分の体験に変えていく。</strong>それが、この人のやり方らしい。</p>
+  </section>
+
+</main>
+<div class="closing"><div class="read">
+
+    <h2>まとめ｜みんなが持っているもので、参入できる</h2>
+    <p>最後に、この仕事を通じて何を伝えたいかを聞いた。返ってきたのは、ツールの話ではなかった。</p>
+    <blockquote>
+      <p>発信自体はみんながやると思うので、自分自身のアイデンティティや名刺、フォロワーシップといったものをみんなが持ち、それをAIを使いながら参入できるということを伝えられたらな、と。</p>
+      <cite>菅野 秀平</cite>
+    </blockquote>
+    <p>特別な素材はいらない。すでに持っているもの——自分が誰で、誰とつながっているか——を、AIと一緒に動かせばいい。<strong>そういう話として伝えたい、ということだった。</strong></p>
+    <p>昨日の商談を翌朝の号外にして配る人が言うと、その言葉には実物がある。</p>
+    <p class="last">御社のアカウントは、返事が来たとき、誰が返していますか。</p>
+    <p><a class="cta" href="/saas/media/">SaaS Media の記事一覧へ</a></p>
+
+</div></div>
+<footer class="read">
+  <p>この記事は、ご本人へのインタビュー回答（2026年9月・Slack）をもとに構成しています。読みやすさのために編集していますが、事実の追加はしていません。社内でのやり取りからの引用を含みます。</p>
+  <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+</footer>
+</body>
+</html>
