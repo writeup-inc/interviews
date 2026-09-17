@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://writeup-inc.github.io/interviews/lsync-kanno/">
+<meta property="og:url" content="https://writeup-inc.github.io/interviews/lsync-kanno/">
+<meta property="og:title" content="止めないこと">
+<meta property="og:description" content="Lシンク担当・菅野敬彦。価値はAIが答えることではなかった。">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://writeup-inc.github.io/saas/media/assets/worklog-desk.jpg">
+<title>止めないこと ｜ SaaS Media</title>
+<meta name="description" content="Lシンク担当・菅野敬彦。価値はAIが答えることではなかった。">
+<style>
+h1,h2,h3,.lead,[data-keep-phrase]{ word-break:auto-phrase; line-break:strict; overflow-wrap:anywhere; }
+@supports not (word-break:auto-phrase){ h1,h2,h3,.lead,[data-keep-phrase]{ word-break:normal; } }
+*,*::before,*::after{ box-sizing:border-box; }
+:root{
+  --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:680px;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho",Georgia,serif;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+}
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:#fff; font-family:var(--sans);
+  font-size:16px; line-height:1.8; -webkit-font-smoothing:antialiased; }
+a{ color:inherit; }
+h1,h2,h3,p{ margin-top:0; }
+.shell{ width:min(calc(100% - 44px),var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 44px),var(--read)); margin-inline:auto; }
+.site-header{ position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94); backdrop-filter:blur(12px); }
+.nav-inner{ height:56px; display:flex; align-items:center; gap:20px; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  font-size:15px; font-weight:800; letter-spacing:-.03em; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px;
+  display:grid; place-items:center; font:800 13px/1 Georgia,serif; }
+.back{ margin-left:auto; color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 22px;
+  display:flex; align-items:center; gap:10px; font-size:10px; font-weight:800; }
+.eyebrow::before{ content:""; height:2px; width:24px; background:var(--orange); }
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:76px 0 52px; }
+.hero h1{ font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(1.85rem,6vw,3.4rem); line-height:1.4; margin:0 0 24px; }
+.hero .sub{ font-family:var(--serif); font-size:clamp(15px,1.9vw,19px);
+  line-height:1.9; margin:0 0 30px; max-width:28em; color:#333; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px;
+  display:flex; gap:22px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:7px; }
+main{ padding:66px 0 0; font-family:var(--serif); }
+main p{ margin:0 0 26px; line-height:2.15; font-size:17px; letter-spacing:.01em; }
+main strong{ font-weight:700; background:linear-gradient(transparent 62%, #fde4cf 62%); }
+section{ margin-bottom:62px; }
+h2{ font-family:var(--sans); font-size:clamp(1.15rem,3vw,1.6rem); line-height:1.55;
+  letter-spacing:-.02em; font-weight:800; margin:0 0 26px; padding-top:22px;
+  border-top:2px solid var(--ink); }
+h2 .step{ display:block; font:800 10px/1 var(--sans); letter-spacing:.16em;
+  color:var(--orange-dark); margin-bottom:12px; }
+blockquote{ margin:30px 0; padding:0 0 0 20px; border-left:3px solid var(--orange); }
+blockquote p{ font-size:clamp(17px,2.2vw,20px); line-height:1.95; margin:0 0 8px; }
+blockquote cite{ display:block; font-family:var(--sans); color:var(--sub);
+  font-size:11px; font-weight:700; font-style:normal; letter-spacing:.04em; }
+.beat{ font-size:clamp(18px,2.4vw,22px) !important; line-height:1.7 !important;
+  font-weight:600; margin:34px 0 !important; }
+.g{ font-family:var(--sans); font-size:10px; font-weight:800; letter-spacing:.06em;
+  padding:2px 6px; border-radius:2px; white-space:nowrap; vertical-align:.14em; }
+.g-guess{ background:#fff1e3; color:var(--orange-dark); border:1px solid #f7c79c; }
+.g-check{ background:#eef1f7; color:#3d4f7a; border:1px solid #c3cde3; }
+.closing{ background:var(--paper); border-top:1px solid var(--line);
+  padding:56px 0 62px; margin-top:16px; font-family:var(--serif); }
+.closing h2{ border-top:0; padding-top:0; }
+.closing p{ margin:0 0 24px; line-height:2.15; font-size:17px; }
+.closing .last{ font-size:clamp(18px,2.4vw,22px); font-weight:600; line-height:1.75; }
+.cta{ display:inline-block; font-family:var(--sans); background:var(--ink); color:#fff;
+  text-decoration:none; padding:15px 30px; font-size:14px; font-weight:800; }
+.cta:hover{ background:var(--orange-dark); }
+.legend{ font-family:var(--sans); background:#fff; border:1px solid var(--line);
+  padding:20px 22px; margin:0 0 42px; }
+.legend h3{ font-size:11px; letter-spacing:.14em; font-weight:800; color:var(--sub); margin:0 0 14px; }
+.legend ul{ margin:0; padding:0; }
+.legend li{ font-size:13px; line-height:1.9; margin-bottom:7px; list-style:none; }
+footer{ border-top:1px solid var(--line); padding:32px 0 60px; font-family:var(--sans); }
+footer p{ color:var(--sub); font-size:12px; line-height:1.85; margin:0 0 8px; }
+@media (max-width:600px){
+  .hero{ padding:54px 0 40px; }
+  main{ padding-top:48px; }
+  main p{ font-size:16px; line-height:2.05; }
+  section{ margin-bottom:50px; }
+}
+
+.hero-band{ margin:0; border-bottom:1px solid var(--line); background:var(--paper); }
+.hero-band img{ display:block; width:100%; height:clamp(220px,34vw,430px); object-fit:cover; }
+.hero-band figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.7;
+  width:min(calc(100% - 44px),var(--max)); margin:11px auto 13px; }
+figure{ margin:36px 0; }
+figure img{ display:block; width:100%; }
+figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.75;
+  margin-top:10px; padding-left:12px; border-left:2px solid var(--line); }
+figcaption b{ color:#444; margin-right:7px; letter-spacing:.1em; font-size:10px; }
+.scene img{ height:clamp(200px,31vw,350px); object-fit:cover; }
+.portrait{ float:right; width:clamp(124px,27%,196px); margin:2px 0 18px 26px; }
+.portrait img{ border:1px solid var(--line); }
+.portrait figcaption{ padding-left:0; border-left:0; margin-top:8px; font-size:10px; }
+section::after{ content:""; display:block; clear:both; }
+@media (max-width:600px){
+  .portrait{ float:none; width:100%; margin:28px 0; }
+  .portrait figcaption{ padding-left:12px; border-left:2px solid var(--line); }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="shell nav-inner">
+    <a class="brand" href="/saas/media/"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="/saas/media/">← カタログへ戻る</a>
+  </div>
+</header>
+<div class="hero">
+  <div class="read">
+    <p class="eyebrow">INTERVIEW ／ 菅野 敬彦</p>
+    <h1>止めないこと</h1>
+    <p class="sub">AIが答えることに価値があるのではない。人がやり切れないフォローを、止めないこと。</p>
+    <p class="hero-meta"><span><b>話す人</b>菅野 敬彦</span><span><b>プロダクト</b>Lシンク</span><span><b>取材</b>2026年9月17日</span><span><b>読了</b>約6分</span></p>
+  </div>
+</div>
+<figure class="hero-band"><img src="/saas/media/assets/worklog-desk.jpg" alt="">
+<figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption></figure>
+<main class="read">
+
+  <section>
+    <h2><span class="step">起</span>「愚者は経験に学び、賢者は歴史に学ぶ」と書く人</h2>
+    <p>社内チャンネルに、こんな告知が流れることがある。</p>
+    <blockquote>
+      <p>ランチトークは【ライトアップの歴史】を学ぶ会です。歴史に学び、入社歴に関係なく、ライトアップのリソースを最大活用できるようになりましょう。</p>
+      <cite>社内チャンネルより</cite>
+    </blockquote>
+    <p>冒頭には、こう添えられている。愚者は経験に学び、賢者は歴史に学ぶ。</p>
+    <p>書いているのは菅野敬彦。Lシンクを担当している。新人向けのチャンネルで先輩を誘い、昼の時間に人を集め、会社に積み上がってきたものを渡そうとしている。</p>
+    <p class="beat">誰かが持っているものを、別の誰かに渡す。この人の仕事は、だいたいその形をしている。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">起</span>「20時過ぎになっちゃいますが、それでも」</h2>
+    <p>ふだんのやり取りは、とにかく腰が低い。文末には m(__)m がつく。</p>
+    <p>打ち合わせの時間を押さえるときも、まず相手の都合から確認する。20時過ぎになっちゃいますが、それでもよろしければ——そう前置きしてから本題に入る。</p>
+    <p>料金の行き違いがあったときには、こう書いていた。顧客説明は私行きますので、と。 <strong>面倒なところを、自分の側に寄せる癖がある。</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>説明するほど、話が複雑になっていった</h2>
+    <p>Lシンクを提案し始めたとき、最初にぶつかったのは説明の難しさだった。</p>
+    <blockquote>
+      <p>「LINE×AI」「営業マンの分身」と説明しても、便利そうではあるけれど、自社で何に使うのかまでイメージしてもらいにくかった。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>丁寧に説明しようとするほど、話は前に進まなくなった。Lステップとの違い、AIの誤回答、既存のLINEとの連携。<strong>機能の説明に入るほど、話が複雑になっていった。</strong></p>
+    <blockquote>
+      <p>こちらが機能を説明しすぎると、逆にお客さまの課題から離れてしまう感覚があった。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>説明が足りないのではない。説明そのものが、遠ざけていた。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>「AIでこんなことができます」では、失注した</h2>
+    <p>実際に、それで落としたことがある。</p>
+    <blockquote>
+      <p>「AIでこんなことができます」では、費用対効果まで伝わらず失注するケースがあった。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>ところが、同じ商材の話をしていても、置き換えた瞬間に反応が変わる場面があった。商談後に追客できていない。資料請求後のフォローが漏れる。LINEは持っているけれど活用できていない。</p>
+    <p>そうやって<strong>実際の業務に置き換えると、一気に反応が変わった。</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>「一度話したお客さんを、ずっと追いかけるのは人では無理」</h2>
+    <p>お客さまから返ってきた言葉を、菅野は並べて書いてくれた。</p>
+    <blockquote>
+      <p>一度話したお客さんを、その後ずっと追いかけるのは人では無理。<br>
+      LINEはあるけど、ほとんど活用できていない。<br>
+      実際に走らせながら調整したい。<br>
+      まずお客さま向けで使って、うまくいったら社内でも使いたい。</p>
+      <cite>お客さまの言葉</cite>
+    </blockquote>
+    <p>一つ目が、いちばん重い。人では無理だ、と現場が自分で言っている。</p>
+    <p class="beat">求められていたのはAIそのものではなく、<strong>継続して運用できることだった。</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>価値は、答えることではなかった</h2>
+    <p>ここで、菅野の中の言葉が整理される。</p>
+    <blockquote>
+      <p>Lシンクの価値は「AIが回答すること」ではなく、「人がやり切れないフォローを止めないこと」だと整理できた。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>営業担当を置き換えるのではない。営業担当が手を離した後も接点を持ち続ける、分身として見せられるようになった。</p>
+    <p>名刺交換、問い合わせ、商談後。<strong>「今すぐ客ではない人」を、半年、1年と追えることが強みだ</strong>と考えるようになった。</p>
+    <p>会社ごとに課題が違うのだから、最初から全部の機能を見せるより、この1業務をLシンクに任せる、と絞ったほうが伝わる。渡すものを減らしたら、届くようになった。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">結</span>いま、商談は質問から始まる</h2>
+    <p>やり方は、はっきり変わった。</p>
+    <p>機能説明から入らない。代わりに、こう聞く。<strong>今、商談後のお客さまは誰がどう追っていますか。</strong></p>
+    <p>フォローできずに止まっている顧客。休眠しているLINE。問い合わせ対応。まず、漏れている業務のほうを特定する。デモも一般論ではなく、その会社の顧客・商品・質問を想定して見せる。</p>
+    <p>最初から完璧な形を作らない。まず一つの用途で動かして、質問や反応を見ながら改善する提案にした。商談の途中では仮クロージングを入れて、やるとしたら何が懸念ですか、と本音を早めに聞くようにした。</p>
+    <blockquote>
+      <p>フォロー時も資料だけ送るのではなく、「御社ならこの導線」という具体的な運用イメージを残すようにした。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2><span class="step">結</span>当時の自分に言うなら、三行で足りる</h2>
+    <p>今なら当時の自分に何を言うか。返ってきたのは、短い三行だった。</p>
+    <blockquote>
+      <p>Lシンクの説明をしすぎなくていい。<br>
+      「AIで何ができるか」より、「今、人がやり切れていない仕事は何か」を聞いたほうがいい。<br>
+      お客さまが欲しいのはAIではなく、売上を増やすこと、フォロー漏れを減らすこと、現場を楽にすること。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>まず一つの課題に絞って、実際に動いている姿を見せること。それが一番伝わる、と彼は言う。</p>
+  </section>
+
+</main>
+<div class="closing"><div class="read">
+
+    <h2>まとめ｜「人が足りないから」を、理由にさせない</h2>
+    <p>最後に、お客さまに残したい変化を聞いた。</p>
+    <blockquote>
+      <p>「人が足りないからフォローできない」を、なくしたい。</p>
+      <cite>菅野 敬彦</cite>
+    </blockquote>
+    <p>一度出会ったお客さまとの関係が、担当者の忙しさによって途切れない状態を作りたい。AIに営業を任せきるのではなく、AIが継続接点を担うことで、人は相談・提案・クロージングという、人にしかできない仕事に集中できるようにしたい。</p>
+    <p><strong>特に中小企業でも、人数を増やさずに顧客を追い続けられる営業体制を残したい。</strong>それが彼の答えだった。</p>
+    <p>誰かが持っているものを、別の誰かに渡す。昼のランチトークでやっていることと、商談でやろうとしていることは、たぶん同じだ。</p>
+    <p class="last">御社では今、商談後のお客さまを、誰がどう追っていますか。</p>
+    <p><a class="cta" href="/saas/media/">SaaS Media の記事一覧へ</a></p>
+
+</div></div>
+<footer class="read">
+  <p>この記事は、ご本人へのインタビュー回答（2026年9月・Slack）をもとに構成しています。読みやすさのために編集していますが、事実の追加はしていません。社内でのやり取りからの引用を含みます。</p>
+  <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+</footer>
+</body>
+</html>
