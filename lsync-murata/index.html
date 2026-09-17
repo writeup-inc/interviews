@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://writeup-inc.github.io/interviews/lsync-murata/">
+<meta property="og:url" content="https://writeup-inc.github.io/interviews/lsync-murata/">
+<meta property="og:title" content="あの日の社長に、渡したかったもの">
+<meta property="og:description" content="保険を売っていた男が、AIの営業になった。村田峻平が商談で読み違えた日のこと。">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://writeup-inc.github.io/interviews/ai-sales-roundtable/assets/murata.webp">
+<title>あの日の社長に、渡したかったもの ｜ SaaS Media</title>
+<meta name="description" content="保険を売っていた男が、AIの営業になった。村田峻平が商談で読み違えた日のこと。">
+<style>
+h1,h2,h3,.lead,[data-keep-phrase]{ word-break:auto-phrase; line-break:strict; overflow-wrap:anywhere; }
+@supports not (word-break:auto-phrase){ h1,h2,h3,.lead,[data-keep-phrase]{ word-break:normal; } }
+*,*::before,*::after{ box-sizing:border-box; }
+:root{
+  --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:680px;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho",Georgia,serif;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+}
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:#fff; font-family:var(--sans);
+  font-size:16px; line-height:1.8; -webkit-font-smoothing:antialiased; }
+a{ color:inherit; }
+h1,h2,h3,p{ margin-top:0; }
+.shell{ width:min(calc(100% - 44px),var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 44px),var(--read)); margin-inline:auto; }
+
+.site-header{ position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94); backdrop-filter:blur(12px); }
+.nav-inner{ height:56px; display:flex; align-items:center; gap:20px; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  font-size:15px; font-weight:800; letter-spacing:-.03em; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px;
+  display:grid; place-items:center; font:800 13px/1 Georgia,serif; }
+.back{ margin-left:auto; color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 22px;
+  display:flex; align-items:center; gap:10px; font-size:10px; font-weight:800; }
+.eyebrow::before{ content:""; height:2px; width:24px; background:var(--orange); }
+
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:76px 0 52px; }
+.hero h1{ font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(1.85rem,6vw,3.4rem); line-height:1.4; margin:0 0 24px; }
+.hero .sub{ font-family:var(--serif); font-size:clamp(15px,1.9vw,19px);
+  line-height:1.9; margin:0 0 30px; max-width:28em; color:#333; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px;
+  display:flex; gap:22px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:7px; }
+
+main{ padding:66px 0 0; font-family:var(--serif); }
+main p{ margin:0 0 26px; line-height:2.15; font-size:17px; letter-spacing:.01em; }
+main p.tight{ margin-bottom:26px; }
+main strong{ font-weight:700; background:linear-gradient(transparent 62%, #fde4cf 62%); }
+
+section{ margin-bottom:62px; }
+h2{ font-family:var(--sans); font-size:clamp(1.15rem,3vw,1.6rem); line-height:1.55;
+  letter-spacing:-.02em; font-weight:800; margin:0 0 26px; padding-top:22px;
+  border-top:2px solid var(--ink); }
+h2 .step{ display:block; font:800 10px/1 var(--sans); letter-spacing:.16em;
+  color:var(--orange-dark); margin-bottom:12px; }
+
+blockquote{ margin:30px 0; padding:0 0 0 20px; border-left:3px solid var(--orange); }
+blockquote p{ font-size:clamp(17px,2.2vw,20px); line-height:1.95; margin:0 0 8px; }
+blockquote cite{ display:block; font-family:var(--sans); color:var(--sub);
+  font-size:11px; font-weight:700; font-style:normal; letter-spacing:.04em; }
+
+.beat{ font-size:clamp(18px,2.4vw,22px) !important; line-height:1.7 !important;
+  font-weight:600; margin:34px 0 !important; }
+
+.g{ font-family:var(--sans); font-size:10px; font-weight:800; letter-spacing:.06em;
+  padding:2px 6px; border-radius:2px; white-space:nowrap; vertical-align:.14em; }
+.g-guess{ background:#fff1e3; color:var(--orange-dark); border:1px solid #f7c79c; }
+.g-check{ background:#eef1f7; color:#3d4f7a; border:1px solid #c3cde3; }
+
+.closing{ background:var(--paper); border-top:1px solid var(--line);
+  padding:56px 0 62px; margin-top:16px; font-family:var(--serif); }
+.closing h2{ border-top:0; padding-top:0; }
+.closing p{ margin:0 0 24px; line-height:2.15; font-size:17px; }
+.closing .last{ font-size:clamp(18px,2.4vw,22px); font-weight:600; line-height:1.75; }
+.cta{ display:inline-block; font-family:var(--sans); background:var(--ink); color:#fff;
+  text-decoration:none; padding:15px 30px; font-size:14px; font-weight:800; }
+.cta:hover{ background:var(--orange-dark); }
+
+.legend{ font-family:var(--sans); background:#fff; border:1px solid var(--line);
+  padding:20px 22px; margin:0 0 42px; }
+.legend h3{ font-size:11px; letter-spacing:.14em; font-weight:800; color:var(--sub); margin:0 0 14px; }
+.legend li{ font-size:13px; line-height:1.9; margin-bottom:7px; list-style:none; }
+.legend ul{ margin:0; padding:0; }
+
+footer{ border-top:1px solid var(--line); padding:32px 0 60px; font-family:var(--sans); }
+footer p{ color:var(--sub); font-size:12px; line-height:1.85; margin:0 0 8px; }
+
+@media (max-width:600px){
+  .hero{ padding:54px 0 40px; }
+  main{ padding-top:48px; }
+  main p{ font-size:16px; line-height:2.05; }
+  section{ margin-bottom:50px; }
+}
+
+.hero-band{ margin:0; border-bottom:1px solid var(--line); background:var(--paper); }
+.hero-band img{ display:block; width:100%; height:clamp(220px,34vw,430px); object-fit:cover; }
+.hero-band figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.7;
+  width:min(calc(100% - 44px),var(--max)); margin:11px auto 13px; }
+figure{ margin:36px 0; }
+figure img{ display:block; width:100%; }
+figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.75;
+  margin-top:10px; padding-left:12px; border-left:2px solid var(--line); }
+figcaption b{ color:#444; margin-right:7px; letter-spacing:.1em; font-size:10px; }
+.scene img{ height:clamp(200px,31vw,350px); object-fit:cover; }
+.portrait{ float:right; width:clamp(124px,27%,196px); margin:2px 0 18px 26px; }
+.portrait img{ border:1px solid var(--line); }
+.portrait figcaption{ padding-left:0; border-left:0; margin-top:8px; font-size:10px; }
+section::after{ content:""; display:block; clear:both; }
+@media (max-width:600px){
+  .portrait{ float:none; width:100%; margin:28px 0; }
+  .portrait figcaption{ padding-left:12px; border-left:2px solid var(--line); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell nav-inner">
+    <a class="brand" href="#"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="#">← カタログへ戻る</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="read">
+    <p class="eyebrow">INTERVIEW ／ 村田 峻平</p>
+    <h1>あの日の社長に、<br>渡したかったもの</h1>
+    <p class="sub">保険を売っていた男が、AIを売る側に回った。届かなかった言葉と、読み違えた一日の話。</p>
+    <p class="hero-meta">
+      <span><b>話す人</b>村田 峻平</span>
+      <span><b>取材</b>2026年9月17日</span>
+      <span><b>読了</b>約6分</span>
+    </p>
+  </div>
+</div>
+
+<figure class="hero-band"><img src="../ai-sales-roundtable/assets/roundtable-tsuchiya-yoshikawa-murata.webp" alt="">
+<figcaption>営業3人の座談会より。左から土屋、吉川、村田。実写。</figcaption></figure>
+<main class="read">
+
+  <div class="legend">
+    <h3>この記事の出典について（本人確認が済みしだい外します）</h3>
+    <ul>
+      <li>この記事は<b>本人確認前の草案</b>です。確認のため公開しています。</li>
+      <li>無印 … 本人のインタビュー回答そのまま</li>
+      <li><span class="g g-guess">推測</span> … 記事として成立させるため、書き手が想像で補った描写。要修正</li>
+      <li><span class="g g-check">要確認</span> … 本人が別の場で書いていた事実。掲載の可否を本人に確認</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2><span class="step">起</span>その社長は、自分の携帯を遡っていた</h2>
+
+    <p>商談の途中で、社長が言葉を止めた。<span class="g g-guess">推測</span></p>
+
+    <p>スマートフォンを取り出し、親指で画面を上へ、上へと送っていく。探しているのは、ずいぶん前のやり取りらしい。沈黙が続く。<span class="g g-guess">推測</span></p>
+
+    <blockquote>
+      <p>言った言わないになって、個人のLINEを遡って経緯を確認したことがあります。</p>
+      <cite>商談で聞いた、ある社長の言葉</cite>
+    </blockquote>
+
+    <p>村田峻平は、その手つきを黙って見ていた。<span class="g g-guess">推測</span></p>
+
+    <p class="beat">見覚えが、あったからだ。<span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">起</span>保険を売っていた頃、村田も同じことをしていた</h2>
+<figure class="portrait"><img src="../ai-sales-roundtable/assets/murata.webp" alt="">
+<figcaption>村田 峻平。実写。</figcaption></figure>
+
+
+    <p>村田には前職がある。保険だ。</p>
+
+    <p>その仕事を、彼はもうしていない。辞めた理由について、村田は多くを語らない。<span class="g g-guess">推測</span> ただ、今回のインタビューの最後に一度だけ、こんな言葉が出てきた。</p>
+
+    <blockquote>
+      <p>それができていたら、もしかしたら私も保険業をやめずにいたのかな。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+
+    <p>何ができていたら、なのか。それはこの記事の最後に置く。</p>
+
+    <p>いま村田は、AIのサービスを売る側にいる。朝、誰よりも早く社内の会に入り、いちばん前の席に座る。<span class="g g-check">要確認</span> <strong>売る商品は変わったが、人の話を聞く仕事であることは変わらなかった。</strong><span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>機能を並べたら、「別に困ってるわけじゃない」と言われた</h2>
+
+    <p>最初のうち、村田は覚えたことをそのまま話していた。<span class="g g-guess">推測</span> LINEで自動化できます。AIが返信します。できることを、順番に並べていく。</p>
+
+    <p>返ってきたのは、こういう言葉だった。</p>
+
+    <blockquote>
+      <p>別に困ってるわけじゃない。<br>どの商品を使ってどうなるかが分からないと、判断できない。</p>
+      <cite>商談で聞いた言葉</cite>
+    </blockquote>
+
+    <p>こちらが課題だと思って持っていったものが、相手の本当の困り事ではなかった。村田はそう振り返る。</p>
+
+    <p>社長たちの反応は、だいたい同じだったという。チャットボットで聞く以外に、売上につながるAIって本当にあるの——半信半疑のまま、話は先に進まない。</p>
+  </section>
+
+  <section>
+    <h2><span class="step">承</span>売れない理由は、値段ではなかった</h2>
+
+    <p>金額を出しても、同じだった。</p>
+
+    <p>高い。相場が全然分からない。動いているものを見てからじゃないと判断できない。</p>
+
+    <p>三つ目の言葉を聞いたとき、村田の中で何かが引っかかった。<span class="g g-guess">推測</span> 社長たちは値段を拒んでいるわけではない。<strong>値段を判断するための材料を、そもそも持っていない。</strong></p>
+
+    <p>見たことがないものに、高いも安いもない。当たり前のことだった。<span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>攻めに使わせようとして、逆効果になった日</h2>
+
+    <p>忘れられない商談がある。相手は保険を扱う会社だった。<span class="g g-guess">推測</span></p>
+
+    <p>村田にとっては、古巣にあたる業界だ。ここなら分かる。そう思っていた。<span class="g g-guess">推測</span></p>
+
+    <p>AIから顧客へ発信を増やしていきましょう——そう提案したとき、相手の顔が曇った。<span class="g g-guess">推測</span></p>
+
+    <blockquote>
+      <p>AIから発信するのは、金融商品だからお客さんが怖がる。</p>
+      <cite>商談で聞いた言葉</cite>
+    </blockquote>
+
+    <p>攻めにAIを使うことが、逆効果になることもあった。村田は、そう言葉を選んで話す。</p>
+
+    <p class="beat"><strong>いちばん分かっているはずの業界で、いちばん読み違えた。</strong><span class="g g-guess">推測</span></p>
+
+    <p>この一日が、村田の中の順番を入れ替えることになる。<span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">転</span>本当に欲しかったのは、新規ではなかった</h2>
+
+    <p>商談で聞く言葉を、村田は並べ直してみた。<span class="g g-guess">推測</span></p>
+
+    <p>うちはマンパワーがないから、AIに頼るしかない。とにかく時間を生みたい。言った言わないになって、個人のLINEを遡った。</p>
+
+    <p>どれも、新しいお客さんを増やしたいという話ではなかった。</p>
+
+    <blockquote>
+      <p>お客様が本当に欲しいのは新規よりも、既存のお客様への連絡や記録、穴の空いたバケツを塞ぐ方法だったのかな、と。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+
+    <p>穴の空いたバケツ。水を足し続けるより先に、やることがある。</p>
+
+    <p>ここで、村田の中でLシンクの位置づけが変わった。LINEで売るための道具ではない。<strong>社長の手が回らないお客さんとの接点を、代わりに持ち続ける仕組みだ。</strong></p>
+
+    <p>そう捉え直したとき、あの日スマートフォンを遡っていた社長の姿が、はじめて別の意味を持って見えてきた。<span class="g g-guess">推測</span> あれは記録が無いという話ではなく、<strong>その会社のお客さんとの関係が、社長個人の携帯の中にしか無いという話だった。</strong><span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">結</span>商材名を出す前に、黙って待つようになった</h2>
+<figure class="scene"><img src="../murata-referrals/assets/murata-shumpei.jpg" alt="">
+<figcaption><b>PORTRAIT</b>村田 峻平。実写。</figcaption></figure>
+
+
+    <p>やり方を変えた。</p>
+
+    <p>ヒアリングでは、商材名を出す前に、お客さん自身の言葉で困り事が出てくるまで待つ。こちらから課題を提示しない。<strong>「この商材がいいですよ」ではなく、「お客さんの課題を解決するのがこれなんです」という順番にした。</strong></p>
+
+    <p>デモも変えた。機能紹介をやめ、その会社の受付、記録、担当への連絡という実際の業務の流れで動かして見せる。見てもらわないと金額も判断できないのだから、先に見てもらう。</p>
+
+    <p>そして、前職の話をするようになった。保険の現場にいた頃の話をすると、一気に距離が縮まるのだという。</p>
+
+    <blockquote>
+      <p>業界の痛みを分かってる人から届ける。自分のお困り事もそうでしたし、だからこそ私から保険の代理店さんにご紹介させていただくことが多いんです。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+
+    <p>辞めた仕事が、武器になった。<span class="g g-guess">推測</span></p>
+  </section>
+
+  <section>
+    <h2><span class="step">結</span>「何でもできます」をやめたら、信頼が返ってきた</h2>
+
+    <p>もうひとつ、村田が変えたことがある。</p>
+
+    <p>できないことを、最初に正直に言うようにした。</p>
+
+    <blockquote>
+      <p>「何でもできます」というよりも、合わない時は合わない、できないことはできない、というところが、はるかに信頼につながってくる。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+
+    <p>売る人間が自分から手札を減らす行為だ。普通は怖い。<span class="g g-guess">推測</span> それでも村田がそうするのは、<strong>売れるかどうかより先に、信じてもらえるかどうかを取ったから</strong>だろう。<span class="g g-guess">推測</span></p>
+
+    <p>当時の自分に助言するなら、と聞くと、答えは短かった。</p>
+
+    <blockquote>
+      <p>機能を説明しに行くな。相手の一日の業務を聞きに行け。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+  </section>
+
+</main>
+
+<div class="closing">
+  <div class="read">
+    <h2>まとめ｜あの日の社長に、いま渡したいもの</h2>
+
+    <p>村田が最後に描いてみせたのは、機能の話ではなかった。</p>
+
+    <p>社長が一人で抱えている「気にかけなきゃいけないお客さん」を、AIが代わりに覚えている。そして、ちゃんと声をかけてくれる。しばらくして、お客さんのほうから言ってくれる。であれば、この話を聞きたいです、と。</p>
+
+    <p><strong>家に入るところからは、社長でいい。</strong>そこまでの情報提供と、温めを、代わりにやる。</p>
+
+    <p>エンドのお客さんからも、この会社はずっと気にかけてくれる、この担当者はずっと気にかけてくれる、と思ってもらえる関係を作れたら嬉しい。村田はそう言った。そして、こう続けた。</p>
+
+    <blockquote>
+      <p>それができていたら、もしかしたら私も保険業をやめずにいたのかな、という思いを、これからも届けていきたい。</p>
+      <cite>村田 峻平</cite>
+    </blockquote>
+
+    <p class="last">あなたの会社のお客さんとの関係は、いま、誰の携帯の中にありますか。</p>
+
+    <p><a class="cta" href="#">一日の業務を、聞かせてください（60分）</a></p>
+    <p style="font-size:13px;color:#626262;margin-top:14px;"><span class="g g-guess">推測</span> このボタンの文言とリンク先は仮置きです。</p>
+  </div>
+</div>
+
+<footer class="read">
+  <p>この記事について：本人へのインタビュー回答（2026年9月17日・Slack）をもとに、読みやすさのため編集・再構成しています。</p>
+  <p>本記事は本人確認前の草案です。<span class="g g-guess">推測</span> の箇所は書き手の想像であり、事実ではありません。<span class="g g-check">要確認</span> の箇所は本人が別の場で書いていた内容で、掲載の可否が未確認です。公開前にすべて本人の確認を取ります。</p>
+  <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+</footer>
+
+</body>
+</html>
