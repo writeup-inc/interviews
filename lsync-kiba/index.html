@@ -5,317 +5,252 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://writeup-inc.github.io/interviews/lsync-kiba/">
 <meta property="og:url" content="https://writeup-inc.github.io/interviews/lsync-kiba/">
-<meta property="og:title" content="設定に追われた時間が、企画に戻ってきた">
-<meta property="og:description" content="Lシンク担当の木場瑛穂に聞いた、一社ごとの設定に追われた日々と、企画に時間が戻るまで。">
+<meta property="og:title" content="繰り返し、ぶつけ続けた">
+<meta property="og:description" content="Lシンク担当・木場瑛穂。設定に消えていた時間を、企画に取り戻すまで。">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://writeup-inc.github.io/interviews/lsync-kiba/assets/hero-meeting.jpg">
-<title>設定に追われた時間が、企画に戻ってきた ｜ SaaS Media</title>
-<meta name="description" content="Lシンク担当の木場瑛穂に聞いた、一社ごとの設定に追われた日々と、企画に時間が戻るまで。">
+<title>繰り返し、ぶつけ続けた ｜ SaaS Media</title>
+<meta name="description" content="Lシンク担当・木場瑛穂。設定に消えていた時間を、企画に取り戻すまで。">
 <style>
-/* ── lp-base.css（初期CSS） ───────────────────────────── */
-h1, h2, h3, h4, h5,
-.lead, .catch, .hero__title, [data-keep-phrase] {
-  word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere;
-}
-@supports not (word-break: auto-phrase) {
-  h1, h2, h3, h4, h5, .lead, .catch, .hero__title, [data-keep-phrase] { word-break: normal; }
-}
-.nobr { white-space: nowrap; }
-:root { --fs-min: 12px; --fs-body: 16px; }
-body { font-size: var(--fs-body); line-height: 1.8; }
-small, .note, figcaption { font-size: var(--fs-min); line-height: 1.7; }
-h1, .hero__title { font-size: clamp(1.55rem, 5.2vw, 3.25rem); line-height: 1.35; }
-h2 { font-size: clamp(1.3rem, 3.6vw, 2.1rem); line-height: 1.45; }
-:root { --fixed-cta-h: 0px; }
-body { padding-bottom: calc(var(--fixed-cta-h) + env(safe-area-inset-bottom, 0px)); }
-*, *::before, *::after { box-sizing: border-box; }
-img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
-main > *, section > *, .grid > *, .flex > * { min-width: 0; }
-pre, table, .scroll-x { overflow-x: auto; max-width: 100%; }
-
-/* ── SaaS Media のトークンを継承 ───────────────────────── */
+h1,h2,h3,.lead,[data-keep-phrase]{ word-break:auto-phrase; line-break:strict; overflow-wrap:anywhere; }
+@supports not (word-break:auto-phrase){ h1,h2,h3,.lead,[data-keep-phrase]{ word-break:normal; } }
+*,*::before,*::after{ box-sizing:border-box; }
 :root{
   --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
-  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:760px;
-  --serif: Georgia, "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:680px;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho",Georgia,serif;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
 }
-html{ -webkit-text-size-adjust:100%; }
-body{
-  margin:0; color:var(--ink); background:#fff;
-  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:#fff; font-family:var(--sans);
+  font-size:16px; line-height:1.8; -webkit-font-smoothing:antialiased; }
 a{ color:inherit; }
-:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; }
-.shell{ width:min(calc(100% - 40px), var(--max)); margin-inline:auto; }
-.read{ width:min(calc(100% - 40px), var(--read)); margin-inline:auto; }
+h1,h2,h3,p{ margin-top:0; }
+.shell{ width:min(calc(100% - 44px),var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 44px),var(--read)); margin-inline:auto; }
+.site-header{ position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94); backdrop-filter:blur(12px); }
+.nav-inner{ height:56px; display:flex; align-items:center; gap:20px; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  font-size:15px; font-weight:800; letter-spacing:-.03em; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px;
+  display:grid; place-items:center; font:800 13px/1 Georgia,serif; }
+.back{ margin-left:auto; color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 22px;
+  display:flex; align-items:center; gap:10px; font-size:10px; font-weight:800; }
+.eyebrow::before{ content:""; height:2px; width:24px; background:var(--orange); }
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:76px 0 52px; }
+.hero h1{ font-family:var(--serif); font-weight:600; letter-spacing:-.01em;
+  font-size:clamp(1.85rem,6vw,3.4rem); line-height:1.4; margin:0 0 24px; }
+.hero .sub{ font-family:var(--serif); font-size:clamp(15px,1.9vw,19px);
+  line-height:1.9; margin:0 0 30px; max-width:28em; color:#333; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px;
+  display:flex; gap:22px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:7px; }
+main{ padding:66px 0 0; font-family:var(--serif); }
+main p{ margin:0 0 26px; line-height:2.15; font-size:17px; letter-spacing:.01em; }
+main strong{ font-weight:700; background:linear-gradient(transparent 62%, #fde4cf 62%); }
+section{ margin-bottom:62px; }
+h2{ font-family:var(--sans); font-size:clamp(1.15rem,3vw,1.6rem); line-height:1.55;
+  letter-spacing:-.02em; font-weight:800; margin:0 0 26px; padding-top:22px;
+  border-top:2px solid var(--ink); }
+h2 .step{ display:block; font:800 10px/1 var(--sans); letter-spacing:.16em;
+  color:var(--orange-dark); margin-bottom:12px; }
+blockquote{ margin:30px 0; padding:0 0 0 20px; border-left:3px solid var(--orange); }
+blockquote p{ font-size:clamp(17px,2.2vw,20px); line-height:1.95; margin:0 0 8px; }
+blockquote cite{ display:block; font-family:var(--sans); color:var(--sub);
+  font-size:11px; font-weight:700; font-style:normal; letter-spacing:.04em; }
+.beat{ font-size:clamp(18px,2.4vw,22px) !important; line-height:1.7 !important;
+  font-weight:600; margin:34px 0 !important; }
+.g{ font-family:var(--sans); font-size:10px; font-weight:800; letter-spacing:.06em;
+  padding:2px 6px; border-radius:2px; white-space:nowrap; vertical-align:.14em; }
+.g-guess{ background:#fff1e3; color:var(--orange-dark); border:1px solid #f7c79c; }
+.g-check{ background:#eef1f7; color:#3d4f7a; border:1px solid #c3cde3; }
+.closing{ background:var(--paper); border-top:1px solid var(--line);
+  padding:56px 0 62px; margin-top:16px; font-family:var(--serif); }
+.closing h2{ border-top:0; padding-top:0; }
+.closing p{ margin:0 0 24px; line-height:2.15; font-size:17px; }
+.closing .last{ font-size:clamp(18px,2.4vw,22px); font-weight:600; line-height:1.75; }
+.cta{ display:inline-block; font-family:var(--sans); background:var(--ink); color:#fff;
+  text-decoration:none; padding:15px 30px; font-size:14px; font-weight:800; }
+.cta:hover{ background:var(--orange-dark); }
+.legend{ font-family:var(--sans); background:#fff; border:1px solid var(--line);
+  padding:20px 22px; margin:0 0 42px; }
+.legend h3{ font-size:11px; letter-spacing:.14em; font-weight:800; color:var(--sub); margin:0 0 14px; }
+.legend ul{ margin:0; padding:0; }
+.legend li{ font-size:13px; line-height:1.9; margin-bottom:7px; list-style:none; }
+footer{ border-top:1px solid var(--line); padding:32px 0 60px; font-family:var(--sans); }
+footer p{ color:var(--sub); font-size:12px; line-height:1.85; margin:0 0 8px; }
+@media (max-width:600px){
+  .hero{ padding:54px 0 40px; }
+  main{ padding-top:48px; }
+  main p{ font-size:16px; line-height:2.05; }
+  section{ margin-bottom:50px; }
+}
 
-
-.site-header{ border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(12px); position:sticky; top:0; z-index:20; }
-.site-header .shell{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 0; }
-.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-size:15px; font-weight:800; letter-spacing:-.03em; white-space:nowrap; }
-.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px; display:grid; place-items:center; font:800 13px/1 Georgia, serif; }
-.back{ color:#444; text-decoration:none; font-size:12px; font-weight:700; }
-.back:hover{ color:var(--orange-dark); }
-
-.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 18px; display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; }
-.eyebrow::before{ content:""; display:block; height:2px; width:24px; background:var(--orange); }
-
-.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:56px 0 46px; }
-.hero h1{ letter-spacing:-.045em; margin:0 0 26px; }
-.hero h1 em{ color:var(--orange-dark); font-family:var(--serif); font-style:normal; font-weight:500; }
-.hero-lead{ max-width:38em; color:#383838; margin:0 0 30px; font-size:16px; font-weight:550; line-height:1.95; }
-.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px; display:flex; gap:26px; flex-wrap:wrap; font-size:12px; font-weight:650; }
-.hero-meta b{ color:var(--ink); margin-right:8px; }
-
-main{ padding:38px 0 0; }
-.chapter{ margin:0 0 54px; }
-.chapter-no{ font:500 13px/1 var(--serif); color:var(--orange-dark); letter-spacing:.18em; display:block; margin-bottom:12px; }
-.chapter h2{ letter-spacing:-.035em; margin:0 0 30px; padding-bottom:18px; border-bottom:2px solid var(--ink); }
-
-.qa{ margin:0 0 26px; }
-.q{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; margin:0 0 16px; }
-.q-mark{ font:500 15px/1.5 var(--serif); color:var(--orange-dark); }
-.q p{ margin:0; font-size:15px; font-weight:700; color:#333; line-height:1.85; }
-.a{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; }
-.a-name{ font-size:12px; font-weight:800; color:var(--ink); border-left:3px solid var(--orange); padding-left:9px; white-space:nowrap; margin-top:6px; }
-.a p{ margin:0 0 15px; line-height:2.0; }
-.a p:last-child{ margin-bottom:0; }
-.note-inline{ font-size:12px; line-height:1.75; color:var(--sub); background:var(--paper); border-left:3px solid var(--line); padding:12px 14px; margin:0 0 15px; }
-
-.pull{ margin:38px 0; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.pull p{ margin:0; font-family:var(--serif); font-size:clamp(19px,2.6vw,25px); line-height:1.7; letter-spacing:-.01em; }
-.chapter > .pull:last-child{ margin-bottom:0; }
-
-figure{ margin:54px 0; }
-figure img{ width:100%; display:block; border:1px solid var(--line); aspect-ratio:16/9; object-fit:cover; background:var(--paper); }
-figcaption{ color:var(--sub); margin-top:9px; }
-
-/* 図解 */
-.dia{ margin:34px 0 0; }
-.dia-title{ font-size:13px; font-weight:800; letter-spacing:.02em; margin:0 0 14px; padding-left:11px; border-left:3px solid var(--orange); }
-.dia-note{ color:var(--sub); font-size:12px; line-height:1.7; margin:12px 0 0; }
-.compare{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.compare > div{ border:1px solid var(--line); padding:17px 16px; background:#fff; }
-.compare .side-a{ background:var(--paper); }
-.compare h4{ margin:0 0 11px; font-size:13px; letter-spacing:.02em; }
-.compare .side-b h4{ color:var(--orange-dark); }
-.compare p{ margin:0 0 11px; font-size:14px; line-height:1.8; }
-.compare .verdict{ margin:0; padding-top:11px; border-top:1px solid var(--line); font-size:14px; font-weight:800; }
-.flow{ display:flex; align-items:stretch; gap:9px; flex-wrap:wrap; }
-.flow .step{ flex:1 1 128px; border:1px solid var(--line); padding:14px 13px; font-size:13px; font-weight:700; line-height:1.6; background:#fff; }
-.flow .step.last{ border-color:var(--ink); background:var(--ink); color:#fff; }
-.flow .step b{ display:block; font:500 12px/1 var(--serif); color:var(--orange-dark); margin-bottom:7px; letter-spacing:.1em; }
-.flow .step.last b{ color:#ffb489; }
-.flow .arrow{ align-self:center; flex:0 0 auto; color:var(--orange); }
-
-.voices{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:46px 0; margin:0 0 54px; }
-.voices h3{ margin:0 0 20px; font-size:15px; }
-.voices h3 + ul{ margin-bottom:0; }
-.voices h3.second{ margin-top:34px; }
-.voices ul{ margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
-.voices li{ padding:15px 0; border-bottom:1px solid var(--line); line-height:1.85; font-size:15px; }
-.voices li b{ display:block; font-size:12px; letter-spacing:.06em; color:var(--orange-dark); margin-bottom:5px; font-weight:800; }
-
-.article-end{ border-top:1px solid var(--line); padding:24px 0; }
-.article-end a{ font-size:14px; font-weight:800; text-decoration:none; color:var(--orange-dark); }
-.article-end a:hover{ text-decoration:underline; }
-
-.colophon{ border-top:1px solid var(--line); padding:24px 0 60px; color:var(--sub); }
-.colophon p{ margin:0 0 8px; }
-.colophon b{ color:var(--ink); }
-
-@media (max-width:640px){
-  .hero{ padding:40px 0 34px; }
-  .q{ display:block; }
-  .q .q-mark{ margin-right:8px; }
-  .q p{ display:inline; }
-  .a{ grid-template-columns:1fr; gap:7px; }
-  .a-name{ border-left:0; border-top:3px solid var(--orange); padding:7px 0 0; margin-top:0; }
-  .compare{ grid-template-columns:1fr; }
-  .flow{ display:block; }
-  .flow .step{ width:100%; }
-  .flow .arrow{ display:block; width:15px; height:15px; margin:9px auto; transform:rotate(90deg); }
+.hero-band{ margin:0; border-bottom:1px solid var(--line); background:var(--paper); }
+.hero-band img{ display:block; width:100%; height:clamp(220px,34vw,430px); object-fit:cover; }
+.hero-band figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.7;
+  width:min(calc(100% - 44px),var(--max)); margin:11px auto 13px; }
+figure{ margin:36px 0; }
+figure img{ display:block; width:100%; }
+figcaption{ font-family:var(--sans); color:var(--sub); font-size:11px; line-height:1.75;
+  margin-top:10px; padding-left:12px; border-left:2px solid var(--line); }
+figcaption b{ color:#444; margin-right:7px; letter-spacing:.1em; font-size:10px; }
+.scene img{ height:clamp(200px,31vw,350px); object-fit:cover; }
+.portrait{ float:right; width:clamp(124px,27%,196px); margin:2px 0 18px 26px; }
+.portrait img{ border:1px solid var(--line); }
+.portrait figcaption{ padding-left:0; border-left:0; margin-top:8px; font-size:10px; }
+section::after{ content:""; display:block; clear:both; }
+@media (max-width:600px){
+  .portrait{ float:none; width:100%; margin:28px 0; }
+  .portrait figcaption{ padding-left:12px; border-left:2px solid var(--line); }
 }
 </style>
 </head>
 <body>
-
 <header class="site-header">
-  <div class="shell">
-    <a class="brand" href="https://writeup-inc.github.io/saas/media/"><span class="brand-mark">M</span>SaaS Media</a>
-    <a class="back" href="https://writeup-inc.github.io/saas/media/">← カタログへ戻る</a>
+  <div class="shell nav-inner">
+    <a class="brand" href="#"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="#">← カタログへ戻る</a>
   </div>
 </header>
-
-<section class="hero">
+<div class="hero">
   <div class="read">
-    <p class="eyebrow">INTERVIEW ／ Lシンク</p>
-    <h1>設定に追われた時間が、<span class="nobr"><em>企画</em>に戻ってきた</span></h1>
-    <p class="hero-lead">Lシンクは、LINEでの営業・予約・問い合わせ対応を仕組みにするサービスです。担当している木場瑛穂に、設定に追われていた日々と、企画に時間が戻るまでを聞きました。</p>
-    <div class="hero-meta">
-      <span><b>話す人</b>木場 瑛穂</span>
-      <span><b>プロダクト</b>Lシンク</span>
-      <span><b>取材</b>2026年9月16日</span>
-    </div>
+    <p class="eyebrow">INTERVIEW ／ 木場 瑛穂</p>
+    <h1>繰り返し、<br>ぶつけ続けた</h1>
+    <p class="sub">設定に消えていた時間を、企画に取り戻すまで。一度言って終わりにしなかった人の話。</p>
+    <p class="hero-meta"><span><b>話す人</b>木場 瑛穂</span><span><b>プロダクト</b>Lシンク</span><span><b>取材</b>2026年9月16日</span><span><b>読了</b>約6分</span></p>
   </div>
-</section>
-
-<main>
-  <div class="read">
-  <article class="chapter">
-    <span class="chapter-no">01</span>
-    <h2>一社一社、<span class="nobr">設計がばらばらだった</span></h2>
-
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>Lシンクを提案し始めた時、最初に感じた難しさは何でしたか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>企業ごとに理想の使い方や伸ばしたい数字が違うので、実現に向けた設計が一社一社バラバラで、カスタマイズが必要でした。</p>
-        <p>テンプレ化するにも業種ごとの対応が要るので、当初は設計の難易度が高かったです。</p>
-        <p>設計を企画できても、それを再現するための設定作業にさらに時間がかかります。イメージを形にするまでのハードルが、とにかく大きかった。</p>
-      </div></div>
-    </div>
-
-    <div class="pull"><p>設計を企画できても、それを形にする設定作業に、さらに時間がかかる。</p></div>
-
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>「このままの伝え方では届かない」と思った出来事はありますか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>設定が大変で時間がかかる状態のまま進めても、魅力的なサービスにはならないと感じていました。</p>
-        <p>業種ごとの事例でテンプレ化できないと、お客さん自身も「導入したらどうなるか」をイメージできません。それでは導入の判断が難しいと考えていました。</p>
-      </div></div>
-    </div>
-
-    <div class="dia">
-      <p class="dia-title">形にするまでに、これだけあった</p>
-      <div class="flow">
-        <div class="step"><b>01</b>業種ごとに設計する</div>
-        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
-        <div class="step"><b>02</b>管理画面の項目を埋める</div>
-        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
-        <div class="step"><b>03</b>リッチメニュー画像をつくる</div>
-        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
-        <div class="step last"><b>04</b>ステップ配信を組む</div>
-      </div>
-      <p class="dia-note">ここまで終えて、ようやく企画に入れました。木場の発言をもとに構成しています。</p>
-    </div>
-
-  </article>
-
-  <figure>
-    <img src="./assets/hero-meeting.jpg" width="1536" height="864" loading="lazy" alt="打ち合わせをするチームのイメージ写真">
-    <figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption>
-  </figure>
-
-  <article class="chapter">
-    <span class="chapter-no">02</span>
-    <h2>「LINEで自分の代わりに<span class="nobr">営業してほしい」</span></h2>
-
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>顧客や現場からの言葉で、印象に残っているものはありますか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>「LINEで自分の代わりに営業してほしい」「予約もこういう取り方をしたい」など、現場から日々たくさんの「やりたいこと」が寄せられました。</p>
-        <p>Lシンクは、そうした声を一つずつ形にして肉付けしてきたサービスです。お客さんの声から生まれた機能が多いんです。</p>
-      </div></div>
-    </div>
-
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>そこから得たヒント、実際に動いたことは何でしたか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>ライトアップには、お客さんのニーズに対してシステムを追加開発できる体制が整っています。だからこそ「本当に使えるサービス」にするために、設定部分をもっと気軽にできないかとエンジニアへ何度も相談しました。</p>
-        <p>自分でアカウントの設定を手がけてきたからこそ「時間がかかる」という課題を痛感していて、この悩みを繰り返しぶつけ続けました。</p>
-      </div></div>
-    </div>
-
-  </article>
-
+</div>
+<figure class="hero-band"><img src="assets/hero-meeting.jpg" alt="">
+<figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption></figure>
+<main class="read">
+  <div class="legend">
+    <h3>この記事の出典について（本人確認が済みしだい外します）</h3>
+    <ul>
+      <li>この記事は<b>本人確認前の草案</b>です。確認のため公開しています。</li>
+      <li>無印 … 本人のインタビュー回答そのまま</li>
+      <li><span class="g g-guess">推測</span> … 記事として成立させるため、書き手が想像で補った描写。要修正</li>
+      <li><span class="g g-check">要確認</span> … Slackの履歴から拾った事実。掲載の可否を本人に確認</li>
+    </ul>
   </div>
 
-  <section class="voices">
-    <div class="read">
-      <h3>現場で聞こえてきた声</h3>
-      <ul>
-        <li><b>営業を任せたい</b>「LINEで自分の代わりに営業してほしい」</li>
-        <li><b>予約の取り方</b>「予約もこういう取り方をしたい」</li>
-      </ul>
-      <h3 class="second">その声が向かった先</h3>
-      <ul>
-        <li><b>リッチメニュー</b>画像の作成が難しい、という声から。AIで生成できるようにしたいと相談しました。</li>
-        <li><b>ステップ配信</b>うまく組めない、という声から。AIがステップを組み、人は「どう伝えるか」の企画に集中できる形にしたいと相談しました。</li>
-      </ul>
-    </div>
+  <section>
+    <h2><span class="step">起</span>20時57分、彼女は解約の履歴を書き残していた</h2>
+    <p>2026年9月17日、20時57分。木場瑛穂が社内チャンネルに書いていたのは、ある会社の解約についてのメモだった。<span class="g g-check">要確認</span></p>
+    <p>支払いはこれまでに2回。8月19日と、9月10日。どちらも月額固定費用。来月以降は決済ストップの対応で、これまでの支払い分に言及されたら、この状況を確認してもらえれば——<span class="g g-check">要確認</span></p>
+    <p>華やかな仕事ではない。<span class="g g-guess">推測</span> 契約が終わるときの処理を、誰かが正確に引き継がなければならない。彼女はそれを、淡々と書いている。<span class="g g-guess">推測</span></p>
+    <p class="beat">この人は、残る仕事を引き受ける人だ。<span class="g g-guess">推測</span></p>
   </section>
 
-  <div class="read">
-  <article class="chapter">
-    <span class="chapter-no">03</span>
-    <h2>管理画面を開かずに、<span class="nobr">設定が終わる</span></h2>
+  <section>
+    <h2><span class="step">起</span>「byひより」と署名する</h2>
+<figure class="portrait"><img src="../saas-team/assets/kiba.webp" alt="">
+<figcaption>木場 瑛穂。ご本人の写真を参照した生成ビジュアルです。実際の写真ではありません。</figcaption></figure>
 
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>この9月のリリースで、何が変わりましたか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>ClaudeとMCP連携して、管理画面を開かずとも設定ができるようになりました。これは「求めていた究極」だと感じています。</p>
-        <p>項目の多さで管理画面を敬遠していた人が減るのはもちろんですが、自分としては「設定」ではなく「企画」に最大限の時間を割けるようになったことが、いちばんの魅力です。</p>
-        <p>どんな文章が刺さるか。限られた文字数のクイックリプライで、どうすればボタンを押したくなるか。そうした企画に集中できます。</p>
-        <p>結果として、お客さんとのラリーの質もスピードも上がりました。情報量のある内容で、スピーディーに対応・フォローできるようになっています。</p>
-      </div></div>
-    </div>
+    <p>木場瑛穂。Lシンクという、LINEでの営業・予約・問い合わせ対応を仕組みにするサービスを担当している。</p>
+    <p>社内でお礼を書くとき、彼女はときどき文末に「byひより」と署名する。<span class="g g-check">要確認</span> 自分の名前を、自分で呼び直すような、少しふしぎな署名だ。<span class="g g-guess">推測</span></p>
+    <p>やっていることは幅が広い。受電AIの電話番号を設定し、割り込みが周りの雑音を拾いすぎるのでオフにして調整を相談し、各商材チャンネルのトピックを順番に整えていく。<span class="g g-check">要確認</span> <strong>設定という言葉が、この人の一日には何度も出てくる。</strong><span class="g g-guess">推測</span></p>
+  </section>
 
-    <div class="dia">
-      <p class="dia-title">設定にかけていた時間が、企画に戻る</p>
-      <div class="compare">
-        <div class="side-a">
-          <h4>これまで</h4>
-          <p>業種ごとに設計し、管理画面で項目を埋めていく。形にするまでが長い。</p>
-          <p class="verdict">時間の大半は設定</p>
-        </div>
-        <div class="side-b">
-          <h4>この9月から</h4>
-          <p>Claudeに伝えれば設定が進む。人は「どう伝えるか」を考える。</p>
-          <p class="verdict">時間の大半は企画</p>
-        </div>
-      </div>
-      <p class="dia-note">木場の発言をもとに構成しています。</p>
-    </div>
+  <section>
+    <h2><span class="step">承</span>一社一社、設計がばらばらだった</h2>
+    <p>Lシンクを提案し始めたとき、最初にぶつかった壁を聞いた。</p>
+    <blockquote>
+      <p>企業ごとに理想の使い方や伸ばしたい数字が違うので、実現に向けた設計が一社一社バラバラで、カスタマイズが必要でした。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p>テンプレートにするにも、業種ごとの対応が要る。当初は設計の難易度が高かった、と彼女は言う。</p>
+    <p>だが、本当にきつかったのはその先だった。</p>
+    <blockquote>
+      <p>設計を企画できても、それを再現するための設定作業に、さらに時間がかかります。イメージを形にするまでのハードルが、とにかく大きかった。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+  </section>
 
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>今なら、当時の自分にどんな助言をしますか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>抱えている違和感や「もっとこうしたらいいのに」は、めげずに伝え続け、相談し続けるべきだ、と言いたいです。</p>
-        <p>一番時間がかかっている作業をAIに任せて、人は質を高める方に回る。これがAIの正しい使い方だと、今は実感しています。</p>
-      </div></div>
-    </div>
+  <section>
+    <h2><span class="step">承</span>形にするまでに、四つあった</h2>
+    <p>一社の形ができるまでに、彼女が踏んでいた段取りはこうだ。</p>
+    <p>まず業種ごとに設計する。次に管理画面の項目を埋める。それからリッチメニューの画像をつくる。最後にステップ配信を組む。</p>
+    <p>ここまで終えて、ようやく企画に入れた。</p>
+    <p><strong>時間の大半は、企画ではなく設定に消えていた。</strong></p>
+    <blockquote>
+      <p>設定が大変で時間がかかる状態のまま進めても、魅力的なサービスにはならないと感じていました。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p>業種ごとの事例でテンプレート化できないと、お客さん自身も導入したらどうなるかをイメージできない。それでは判断が難しい。彼女はそう考えていた。</p>
+  </section>
 
-  </article>
+  <section>
+    <h2><span class="step">転</span>同じことを、何度もエンジニアに言い続けた</h2>
+    <p>ここで木場が取った行動が、この記事のいちばんの山場だ。<span class="g g-guess">推測</span></p>
+    <p>ライトアップには、お客さんのニーズに対してシステムを追加開発できる体制がある。だからこそ、と彼女は言う。</p>
+    <blockquote>
+      <p>「本当に使えるサービス」にするために、設定部分をもっと気軽にできないかとエンジニアへ何度も相談しました。自分でアカウントの設定を手がけてきたからこそ「時間がかかる」という課題を痛感していて、この悩みを繰り返しぶつけ続けました。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p>繰り返しぶつけ続けた。この言い方に、この人の性格が出ている。<span class="g g-guess">推測</span></p>
+    <p>一度言って終わりではない。二度でも三度でもない。<strong>自分がいちばん痛い思いをしている場所だから、引かなかった。</strong><span class="g g-guess">推測</span></p>
+    <p>現場からも同じ方向の声が届いていた。リッチメニューの画像の作成が難しい。ステップ配信がうまく組めない。彼女はそれを、そのまま開発に運んだ。</p>
+  </section>
 
-  <article class="chapter">
-    <span class="chapter-no">04</span>
-    <h2>Lシンクを、<span class="nobr">チームの一員に</span></h2>
+  <section>
+    <h2><span class="step">転</span>管理画面を、開かなくてよくなった</h2>
+<figure class="scene"><img src="../saas-team/assets/page-review.webp" alt="">
+<figcaption><b>SCENE ／ PAGE REVIEW</b>画面を指しながら設定を確認する場面。ご本人の写真を参照した生成ビジュアルです。実際の写真ではありません。</figcaption></figure>
 
-    <div class="qa">
-      <div class="q"><span class="q-mark">Q</span><p>このプロダクトを通じて、お客さまに最終的にどんな変化を残したいですか。</p></div>
-      <div class="a"><span class="a-name">木場</span><div>
-        <p>前提として「ライトアップとつながっていれば、こんなAI化ができるんだ」とお客様に驚いてもらいたいです。</p>
-        <p>問い合わせを増やしたり、アポを自動化したりできるサービスです。導入してくれている企業さん全員に、Lシンクを「チームの一員」として捉えてもらいたい。そして、会社の売上につながるサービスにしていきたいです。</p>
-      </div></div>
-    </div>
+    <p>2026年9月。それが形になった。</p>
+    <blockquote>
+      <p>ClaudeとMCP連携して、管理画面を開かずとも設定ができるようになりました。これは「求めていた究極」だと感じています。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p>求めていた究極。控えめな人が使う言葉としては、かなり強い。<span class="g g-guess">推測</span></p>
+    <p>項目の多さで管理画面を敬遠していた人が減る。それも大きい。だが彼女がいちばんの魅力に挙げたのは、別のことだった。</p>
+    <blockquote>
+      <p>自分としては「設定」ではなく「企画」に最大限の時間を割けるようになったことが、いちばんの魅力です。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+  </section>
 
-    <div class="pull"><p>一番時間がかかっている作業をAIに任せて、人は質を高める方に回る。</p></div>
+  <section>
+    <h2><span class="step">結</span>空いた時間で、何を考えているか</h2>
+    <p>では、戻ってきた時間で彼女は何をしているのか。</p>
+    <p>どんな文章が刺さるか。限られた文字数のクイックリプライで、どうすればボタンを押したくなるか。そういうことを考えている。</p>
+    <p>結果は、お客さんとのやり取りに出た。</p>
+    <blockquote>
+      <p>お客さんとのラリーの質もスピードも上がりました。情報量のある内容で、スピーディーに対応・フォローできるようになっています。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p><strong>設定にかけていた時間が、そのままお客さんへの返信の速さに変わった。</strong></p>
+    <p>今なら当時の自分に何を言うか、と聞いた。答えは、自分がやってきたことそのものだった。</p>
+    <blockquote>
+      <p>抱えている違和感や「もっとこうしたらいいのに」は、めげずに伝え続け、相談し続けるべきだ、と言いたいです。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+  </section>
 
-  </article>
-
-
-  <nav class="article-end">
-    <a href="https://writeup-inc.github.io/saas/media/">SaaS Media の記事一覧へ</a>
-  </nav>
-
-  <div class="colophon">
-    <p><b>この記事について</b></p>
-    <p>本人へのインタビュー回答（2026年9月16日・Slack）をもとに、読みやすさのため編集・再構成しています。事実の追加はしていません。</p>
-    <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
-
-  </div>
-  </div>
 </main>
+<div class="closing"><div class="read">
+
+    <h2>まとめ｜チームの一員として、数えてほしい</h2>
+    <p>最後に、お客さまに残したい変化を聞いた。</p>
+    <blockquote>
+      <p>導入してくれている企業さん全員に、Lシンクを「チームの一員」として捉えてもらいたい。そして、会社の売上につながるサービスにしていきたいです。</p>
+      <cite>木場 瑛穂</cite>
+    </blockquote>
+    <p>道具ではなく、一員として数えてほしい。そう言えるのは、彼女自身がこのサービスに手をかけ続けてきたからだろう。<span class="g g-guess">推測</span></p>
+    <p>一番時間がかかっている作業をAIに任せて、人は質を高める方に回る。これがAIの正しい使い方だと、今は実感しています——彼女はそう話した。</p>
+    <p><strong>それは、Lシンクを売る話であると同時に、彼女自身が自分の一日にやったことでもある。</strong><span class="g g-guess">推測</span></p>
+    <p class="last">御社でいちばん時間がかかっている作業は、何ですか。</p>
+    <p><a class="cta" href="#">その作業を、見せてください</a></p>
+    <p style="font-size:13px;color:#626262;margin-top:14px;"><span class="g g-guess">推測</span> このボタンの文言とリンク先は仮置きです。</p>
+
+</div></div>
+<footer class="read">
+  <p>この記事について：本人へのインタビュー回答をもとに、読みやすさのため編集・再構成しています。</p>
+  <p>本記事は本人確認前の草案です。<span class="g g-guess">推測</span> の箇所は書き手の想像であり、事実ではありません。<span class="g g-check">要確認</span> の箇所はSlackの履歴から拾った事実で、掲載の可否が未確認です。公開前にすべて本人の確認を取ります。</p>
+  <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+</footer>
 </body>
 </html>
