@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://writeup-inc.github.io/interviews/lsync-kiba/">
+<meta property="og:url" content="https://writeup-inc.github.io/interviews/lsync-kiba/">
+<meta property="og:title" content="設定に追われた時間が、企画に戻ってきた">
+<meta property="og:description" content="Lシンク担当の木場瑛穂に聞いた、一社ごとの設定に追われた日々と、企画に時間が戻るまで。">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://writeup-inc.github.io/interviews/lsync-kiba/assets/hero-meeting.jpg">
+<title>設定に追われた時間が、企画に戻ってきた ｜ SaaS Media</title>
+<meta name="description" content="Lシンク担当の木場瑛穂に聞いた、一社ごとの設定に追われた日々と、企画に時間が戻るまで。">
+<style>
+/* ── lp-base.css（初期CSS） ───────────────────────────── */
+h1, h2, h3, h4, h5,
+.lead, .catch, .hero__title, [data-keep-phrase] {
+  word-break: auto-phrase; line-break: strict; overflow-wrap: anywhere;
+}
+@supports not (word-break: auto-phrase) {
+  h1, h2, h3, h4, h5, .lead, .catch, .hero__title, [data-keep-phrase] { word-break: normal; }
+}
+.nobr { white-space: nowrap; }
+:root { --fs-min: 12px; --fs-body: 16px; }
+body { font-size: var(--fs-body); line-height: 1.8; }
+small, .note, figcaption { font-size: var(--fs-min); line-height: 1.7; }
+h1, .hero__title { font-size: clamp(1.55rem, 5.2vw, 3.25rem); line-height: 1.35; }
+h2 { font-size: clamp(1.3rem, 3.6vw, 2.1rem); line-height: 1.45; }
+:root { --fixed-cta-h: 0px; }
+body { padding-bottom: calc(var(--fixed-cta-h) + env(safe-area-inset-bottom, 0px)); }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+main > *, section > *, .grid > *, .flex > * { min-width: 0; }
+pre, table, .scroll-x { overflow-x: auto; max-width: 100%; }
+
+/* ── SaaS Media のトークンを継承 ───────────────────────── */
+:root{
+  --ink:#111; --sub:#626262; --paper:#f5f5f2; --line:#d7d7d2;
+  --orange:#f97316; --orange-dark:#c84e09; --max:1200px; --read:760px;
+  --serif: Georgia, "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; color:var(--ink); background:#fff;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; }
+:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; }
+.shell{ width:min(calc(100% - 40px), var(--max)); margin-inline:auto; }
+.read{ width:min(calc(100% - 40px), var(--read)); margin-inline:auto; }
+
+
+.site-header{ border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(12px); position:sticky; top:0; z-index:20; }
+.site-header .shell{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 0; }
+.brand{ display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-size:15px; font-weight:800; letter-spacing:-.03em; white-space:nowrap; }
+.brand-mark{ color:#fff; background:var(--ink); width:24px; height:24px; display:grid; place-items:center; font:800 13px/1 Georgia, serif; }
+.back{ color:#444; text-decoration:none; font-size:12px; font-weight:700; }
+.back:hover{ color:var(--orange-dark); }
+
+.eyebrow{ color:var(--sub); letter-spacing:.14em; margin:0 0 18px; display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; }
+.eyebrow::before{ content:""; display:block; height:2px; width:24px; background:var(--orange); }
+
+.hero{ background:var(--paper); border-bottom:1px solid var(--line); padding:56px 0 46px; }
+.hero h1{ letter-spacing:-.045em; margin:0 0 26px; }
+.hero h1 em{ color:var(--orange-dark); font-family:var(--serif); font-style:normal; font-weight:500; }
+.hero-lead{ max-width:38em; color:#383838; margin:0 0 30px; font-size:16px; font-weight:550; line-height:1.95; }
+.hero-meta{ color:var(--sub); border-top:1px solid var(--line); padding-top:15px; display:flex; gap:26px; flex-wrap:wrap; font-size:12px; font-weight:650; }
+.hero-meta b{ color:var(--ink); margin-right:8px; }
+
+main{ padding:38px 0 0; }
+.chapter{ margin:0 0 54px; }
+.chapter-no{ font:500 13px/1 var(--serif); color:var(--orange-dark); letter-spacing:.18em; display:block; margin-bottom:12px; }
+.chapter h2{ letter-spacing:-.035em; margin:0 0 30px; padding-bottom:18px; border-bottom:2px solid var(--ink); }
+
+.qa{ margin:0 0 26px; }
+.q{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; margin:0 0 16px; }
+.q-mark{ font:500 15px/1.5 var(--serif); color:var(--orange-dark); }
+.q p{ margin:0; font-size:15px; font-weight:700; color:#333; line-height:1.85; }
+.a{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; }
+.a-name{ font-size:12px; font-weight:800; color:var(--ink); border-left:3px solid var(--orange); padding-left:9px; white-space:nowrap; margin-top:6px; }
+.a p{ margin:0 0 15px; line-height:2.0; }
+.a p:last-child{ margin-bottom:0; }
+.note-inline{ font-size:12px; line-height:1.75; color:var(--sub); background:var(--paper); border-left:3px solid var(--line); padding:12px 14px; margin:0 0 15px; }
+
+.pull{ margin:38px 0; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pull p{ margin:0; font-family:var(--serif); font-size:clamp(19px,2.6vw,25px); line-height:1.7; letter-spacing:-.01em; }
+.chapter > .pull:last-child{ margin-bottom:0; }
+
+figure{ margin:54px 0; }
+figure img{ width:100%; display:block; border:1px solid var(--line); aspect-ratio:16/9; object-fit:cover; background:var(--paper); }
+figcaption{ color:var(--sub); margin-top:9px; }
+
+/* 図解 */
+.dia{ margin:34px 0 0; }
+.dia-title{ font-size:13px; font-weight:800; letter-spacing:.02em; margin:0 0 14px; padding-left:11px; border-left:3px solid var(--orange); }
+.dia-note{ color:var(--sub); font-size:12px; line-height:1.7; margin:12px 0 0; }
+.compare{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.compare > div{ border:1px solid var(--line); padding:17px 16px; background:#fff; }
+.compare .side-a{ background:var(--paper); }
+.compare h4{ margin:0 0 11px; font-size:13px; letter-spacing:.02em; }
+.compare .side-b h4{ color:var(--orange-dark); }
+.compare p{ margin:0 0 11px; font-size:14px; line-height:1.8; }
+.compare .verdict{ margin:0; padding-top:11px; border-top:1px solid var(--line); font-size:14px; font-weight:800; }
+.flow{ display:flex; align-items:stretch; gap:9px; flex-wrap:wrap; }
+.flow .step{ flex:1 1 128px; border:1px solid var(--line); padding:14px 13px; font-size:13px; font-weight:700; line-height:1.6; background:#fff; }
+.flow .step.last{ border-color:var(--ink); background:var(--ink); color:#fff; }
+.flow .step b{ display:block; font:500 12px/1 var(--serif); color:var(--orange-dark); margin-bottom:7px; letter-spacing:.1em; }
+.flow .step.last b{ color:#ffb489; }
+.flow .arrow{ align-self:center; flex:0 0 auto; color:var(--orange); }
+
+.voices{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:46px 0; margin:0 0 54px; }
+.voices h3{ margin:0 0 20px; font-size:15px; }
+.voices h3 + ul{ margin-bottom:0; }
+.voices h3.second{ margin-top:34px; }
+.voices ul{ margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+.voices li{ padding:15px 0; border-bottom:1px solid var(--line); line-height:1.85; font-size:15px; }
+.voices li b{ display:block; font-size:12px; letter-spacing:.06em; color:var(--orange-dark); margin-bottom:5px; font-weight:800; }
+
+.article-end{ border-top:1px solid var(--line); padding:24px 0; }
+.article-end a{ font-size:14px; font-weight:800; text-decoration:none; color:var(--orange-dark); }
+.article-end a:hover{ text-decoration:underline; }
+
+.colophon{ border-top:1px solid var(--line); padding:24px 0 60px; color:var(--sub); }
+.colophon p{ margin:0 0 8px; }
+.colophon b{ color:var(--ink); }
+
+@media (max-width:640px){
+  .hero{ padding:40px 0 34px; }
+  .q{ display:block; }
+  .q .q-mark{ margin-right:8px; }
+  .q p{ display:inline; }
+  .a{ grid-template-columns:1fr; gap:7px; }
+  .a-name{ border-left:0; border-top:3px solid var(--orange); padding:7px 0 0; margin-top:0; }
+  .compare{ grid-template-columns:1fr; }
+  .flow{ display:block; }
+  .flow .step{ width:100%; }
+  .flow .arrow{ display:block; width:15px; height:15px; margin:9px auto; transform:rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="https://writeup-inc.github.io/saas/media/"><span class="brand-mark">M</span>SaaS Media</a>
+    <a class="back" href="https://writeup-inc.github.io/saas/media/">← カタログへ戻る</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="read">
+    <p class="eyebrow">INTERVIEW ／ Lシンク</p>
+    <h1>設定に追われた時間が、<span class="nobr"><em>企画</em>に戻ってきた</span></h1>
+    <p class="hero-lead">Lシンクは、LINEでの営業・予約・問い合わせ対応を仕組みにするサービスです。担当している木場瑛穂に、設定に追われていた日々と、企画に時間が戻るまでを聞きました。</p>
+    <div class="hero-meta">
+      <span><b>話す人</b>木場 瑛穂</span>
+      <span><b>プロダクト</b>Lシンク</span>
+      <span><b>取材</b>2026年9月16日</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="read">
+  <article class="chapter">
+    <span class="chapter-no">01</span>
+    <h2>一社一社、<span class="nobr">設計がばらばらだった</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>Lシンクを提案し始めた時、最初に感じた難しさは何でしたか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>企業ごとに理想の使い方や伸ばしたい数字が違うので、実現に向けた設計が一社一社バラバラで、カスタマイズが必要でした。</p>
+        <p>テンプレ化するにも業種ごとの対応が要るので、当初は設計の難易度が高かったです。</p>
+        <p>設計を企画できても、それを再現するための設定作業にさらに時間がかかります。イメージを形にするまでのハードルが、とにかく大きかった。</p>
+      </div></div>
+    </div>
+
+    <div class="pull"><p>設計を企画できても、それを形にする設定作業に、さらに時間がかかる。</p></div>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>「このままの伝え方では届かない」と思った出来事はありますか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>設定が大変で時間がかかる状態のまま進めても、魅力的なサービスにはならないと感じていました。</p>
+        <p>業種ごとの事例でテンプレ化できないと、お客さん自身も「導入したらどうなるか」をイメージできません。それでは導入の判断が難しいと考えていました。</p>
+      </div></div>
+    </div>
+
+    <div class="dia">
+      <p class="dia-title">形にするまでに、これだけあった</p>
+      <div class="flow">
+        <div class="step"><b>01</b>業種ごとに設計する</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step"><b>02</b>管理画面の項目を埋める</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step"><b>03</b>リッチメニュー画像をつくる</div>
+        <svg class="arrow" width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M2 7.5h9M8 4l3.5 3.5L8 11" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        <div class="step last"><b>04</b>ステップ配信を組む</div>
+      </div>
+      <p class="dia-note">ここまで終えて、ようやく企画に入れました。木場の発言をもとに構成しています。</p>
+    </div>
+
+  </article>
+
+  <figure>
+    <img src="./assets/hero-meeting.jpg" width="1536" height="864" loading="lazy" alt="打ち合わせをするチームのイメージ写真">
+    <figcaption>イメージ写真（生成画像）。取材はSlack上のテキストで行いました。</figcaption>
+  </figure>
+
+  <article class="chapter">
+    <span class="chapter-no">02</span>
+    <h2>「LINEで自分の代わりに<span class="nobr">営業してほしい」</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>顧客や現場からの言葉で、印象に残っているものはありますか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>「LINEで自分の代わりに営業してほしい」「予約もこういう取り方をしたい」など、現場から日々たくさんの「やりたいこと」が寄せられました。</p>
+        <p>Lシンクは、そうした声を一つずつ形にして肉付けしてきたサービスです。お客さんの声から生まれた機能が多いんです。</p>
+      </div></div>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>そこから得たヒント、実際に動いたことは何でしたか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>ライトアップには、お客さんのニーズに対してシステムを追加開発できる体制が整っています。だからこそ「本当に使えるサービス」にするために、設定部分をもっと気軽にできないかとエンジニアへ何度も相談しました。</p>
+        <p>自分でアカウントの設定を手がけてきたからこそ「時間がかかる」という課題を痛感していて、この悩みを繰り返しぶつけ続けました。</p>
+      </div></div>
+    </div>
+
+  </article>
+
+  </div>
+
+  <section class="voices">
+    <div class="read">
+      <h3>現場で聞こえてきた声</h3>
+      <ul>
+        <li><b>営業を任せたい</b>「LINEで自分の代わりに営業してほしい」</li>
+        <li><b>予約の取り方</b>「予約もこういう取り方をしたい」</li>
+      </ul>
+      <h3 class="second">その声が向かった先</h3>
+      <ul>
+        <li><b>リッチメニュー</b>画像の作成が難しい、という声から。AIで生成できるようにしたいと相談しました。</li>
+        <li><b>ステップ配信</b>うまく組めない、という声から。AIがステップを組み、人は「どう伝えるか」の企画に集中できる形にしたいと相談しました。</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="read">
+  <article class="chapter">
+    <span class="chapter-no">03</span>
+    <h2>管理画面を開かずに、<span class="nobr">設定が終わる</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>この9月のリリースで、何が変わりましたか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>ClaudeとMCP連携して、管理画面を開かずとも設定ができるようになりました。これは「求めていた究極」だと感じています。</p>
+        <p>項目の多さで管理画面を敬遠していた人が減るのはもちろんですが、自分としては「設定」ではなく「企画」に最大限の時間を割けるようになったことが、いちばんの魅力です。</p>
+        <p>どんな文章が刺さるか。限られた文字数のクイックリプライで、どうすればボタンを押したくなるか。そうした企画に集中できます。</p>
+        <p>結果として、お客さんとのラリーの質もスピードも上がりました。情報量のある内容で、スピーディーに対応・フォローできるようになっています。</p>
+      </div></div>
+    </div>
+
+    <div class="dia">
+      <p class="dia-title">設定にかけていた時間が、企画に戻る</p>
+      <div class="compare">
+        <div class="side-a">
+          <h4>これまで</h4>
+          <p>業種ごとに設計し、管理画面で項目を埋めていく。形にするまでが長い。</p>
+          <p class="verdict">時間の大半は設定</p>
+        </div>
+        <div class="side-b">
+          <h4>この9月から</h4>
+          <p>Claudeに伝えれば設定が進む。人は「どう伝えるか」を考える。</p>
+          <p class="verdict">時間の大半は企画</p>
+        </div>
+      </div>
+      <p class="dia-note">木場の発言をもとに構成しています。</p>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>今なら、当時の自分にどんな助言をしますか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>抱えている違和感や「もっとこうしたらいいのに」は、めげずに伝え続け、相談し続けるべきだ、と言いたいです。</p>
+        <p>一番時間がかかっている作業をAIに任せて、人は質を高める方に回る。これがAIの正しい使い方だと、今は実感しています。</p>
+      </div></div>
+    </div>
+
+  </article>
+
+  <article class="chapter">
+    <span class="chapter-no">04</span>
+    <h2>Lシンクを、<span class="nobr">チームの一員に</span></h2>
+
+    <div class="qa">
+      <div class="q"><span class="q-mark">Q</span><p>このプロダクトを通じて、お客さまに最終的にどんな変化を残したいですか。</p></div>
+      <div class="a"><span class="a-name">木場</span><div>
+        <p>前提として「ライトアップとつながっていれば、こんなAI化ができるんだ」とお客様に驚いてもらいたいです。</p>
+        <p>問い合わせを増やしたり、アポを自動化したりできるサービスです。導入してくれている企業さん全員に、Lシンクを「チームの一員」として捉えてもらいたい。そして、会社の売上につながるサービスにしていきたいです。</p>
+      </div></div>
+    </div>
+
+    <div class="pull"><p>一番時間がかかっている作業をAIに任せて、人は質を高める方に回る。</p></div>
+
+  </article>
+
+
+  <nav class="article-end">
+    <a href="https://writeup-inc.github.io/saas/media/">SaaS Media の記事一覧へ</a>
+  </nav>
+
+  <div class="colophon">
+    <p><b>この記事について</b></p>
+    <p>本人へのインタビュー回答（2026年9月16日・Slack）をもとに、読みやすさのため編集・再構成しています。事実の追加はしていません。</p>
+    <p>顧客名・個人名・未公開の数値および仕様は掲載していません。</p>
+
+  </div>
+  </div>
+</main>
+</body>
+</html>
